@@ -129,7 +129,19 @@ function handleMessage(sender_psid, received_message) {
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": `Min Ga Lar Par Sint!`
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Marketplace",
+        "payload":"Market",
+        "image_url":"https://i.imgur.com/zDEAHdV.png"
+      },{
+        "content_type":"text",
+        "title":"Trade House",
+        "payload":"Trade",
+        "image_url":"https://i.imgur.com/aROXbBq.png"
+      }
+      ]
     }
   }else if (received_message.text == "google") {    
     // Create the payload for a basic text message, which
