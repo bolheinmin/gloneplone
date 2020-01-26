@@ -125,7 +125,37 @@ function handleMessage(sender_psid, received_message) {
   let response;
   
   // Checks if the message contains text
-  if (received_message.text == "hi") {    
+  if (received_message.text == "Hi") {    
+    // Create the payload for a basic text message, which
+    // will be added to the body of our request to the Send API
+    response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":"Hi! I can help you find food packages.",
+          "buttons":[
+          {
+            "type": "postback",
+            "title": "CHAT WITH A PERSON",
+            "payload": "chat",
+          },
+          {
+            "type": "postback",
+            "title": "SEARCH A FOOD PACKAGE",
+            "payload": "search",
+          },
+          {
+            "type": "postback",
+            "title": "BUY",
+            "payload": "buy",
+          }
+          ]
+        }
+      }
+    }
+  }
+  else if (received_message.text == "Dota") {    
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
@@ -143,24 +173,6 @@ function handleMessage(sender_psid, received_message) {
         "image_url":"https://i.imgur.com/aROXbBq.png"
       }
       ]
-    }
-  }else if (received_message.text == "google") {    
-    // Create the payload for a basic text message, which
-    // will be added to the body of our request to the Send API
-    response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"button",
-          "text":"Hi! Please press the button below to link your steam account and start using our service 👇",
-          "buttons":[{
-            "type": "web_url",
-            "title": "Google",
-            "url": `https://www.google.com`,
-            "webview_height_ratio": "tall"
-          }]
-        }
-      }
     }
   } else if (received_message.text == "test") {    
     // Create the payload for a basic text message, which
@@ -208,8 +220,7 @@ function handleMessage(sender_psid, received_message) {
         }
       }
     }
-  } 
-  
+  }
   // Send the response message
   callSendAPI(sender_psid, response);    
 }
