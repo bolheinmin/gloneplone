@@ -221,9 +221,42 @@ function handlePostback(sender_psid, received_postback) {
   let payload = received_postback.payload;
 
   // Set the response based on the postback payload
-  if (payload === 'yes') {
-    response = { "text": "Thanks!" }
-  } else if (payload === 'no') {
+  if (payload === 'Market') {
+    response = {
+      "text":'Please choose a game',
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Dota 2",
+        "payload":"Dota",
+        "image_url":"https://seeklogo.com/images/D/dota-2-logo-A8CAC9B4C9-seeklogo.com.png"
+      },{
+        "content_type":"text",
+        "title":"CS:GO",
+        "payload":"Csgo",
+        "image_url":"https://i.redd.it/1s0j5e4fhws01.png"
+      }
+      ]
+    }
+  } else if (payload === 'Dota') {
+    response = {
+      "text":`What would you like to do?`,
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Purchase Items",
+        "payload":"DotaBuy",
+        "image_url":"https://i.imgur.com/HELIS0G.png"
+      },{
+        "content_type":"text",
+        "title":"Sell Items",
+        "payload":"DotaSell",
+        "image_url":"https://i.imgur.com/BFehPAC.png"
+      }
+      ]
+    }
+  }
+  else if (payload === 'no') {
     response = { "text": "Oops, try sending another image." }
   }
   // Send the message to acknowledge the postback
