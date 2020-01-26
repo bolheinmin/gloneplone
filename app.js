@@ -221,15 +221,7 @@ function handlePostback(sender_psid, received_postback) {
   let payload = received_postback.payload;
 
   // Set the response based on the postback payload
-  if (payload === 'USER_DEFINED_PAYLOAD') {
-    "greeting": [
-    {
-      "locale":"default",
-      "text":"Hello {{user_first_name}} \nWelcome to Glone Plone"
-    }
-    ]
-  }
-  else if (payload === 'Market') {
+  if (payload === 'Market') {
     response = {
       "text":'Please choose a game',
       "quick_replies":[
