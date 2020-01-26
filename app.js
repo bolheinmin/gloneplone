@@ -155,6 +155,26 @@ function handleMessage(sender_psid, received_message) {
       }
     }
   }
+  else if (received_message.text == location) {
+    response = {
+      "mid": "m_AG5Hz2Uq7tuwNEhXfYYKj8mJEM_QPpz5jdCK48PnKAjSdjfipqxqMvK8ma6AC8fplwlqLP_5cgXIbu7I3rBN0P",
+      "attachments": [
+      {
+        "title": "Facebook HQ",
+        "url": "https://www.facebook.com/l.php?u=https%....5-7Ocxrmg",
+        "type": "location",
+        "payload":
+        {
+          "coordinates":
+          {
+            "lat": 37.483872693672,
+            "long": -122.14900441942
+          }
+        }
+      }
+      ]
+    }
+  }
   // Send the response message
   callSendAPI(sender_psid, response);    
 }
@@ -209,6 +229,7 @@ function handlePostback(sender_psid, received_postback) {
       ]
     }
   }
+  else if (payload) {}
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 }
