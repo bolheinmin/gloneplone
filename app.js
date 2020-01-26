@@ -155,7 +155,7 @@ function handleMessage(sender_psid, received_message) {
       }
     }
   }
-  else if (received_message == "Hello") {
+  else if (received_message.text == "Hello") {
     response = {
       "attachment":{
         "type":"template",
