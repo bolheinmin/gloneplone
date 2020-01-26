@@ -138,12 +138,12 @@ function handleMessage(sender_psid, received_message) {
           {
             "type": "postback",
             "title": "CHAT WITH A PERSON",
-            "payload": "chat",
+            "payload": "chatWithPerson",
           },
           {
             "type": "postback",
             "title": "SEARCH A FOOD PACKAGE",
-            "payload": "search",
+            "payload": "searchFoodPackage",
           },
           {
             "type": "postback",
@@ -151,72 +151,6 @@ function handleMessage(sender_psid, received_message) {
             "payload": "buy",
           }
           ]
-        }
-      }
-    }
-  }
-  else if (received_message.text == "Dota") {    
-    // Create the payload for a basic text message, which
-    // will be added to the body of our request to the Send API
-    response = {
-      "text":`Welcome!`,
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Marketplace",
-        "payload":"Market",
-        "image_url":"https://i.imgur.com/zDEAHdV.png"
-      },{
-        "content_type":"text",
-        "title":"Trade House",
-        "payload":"Trade",
-        "image_url":"https://i.imgur.com/aROXbBq.png"
-      }
-      ]
-    }
-  } else if (received_message.text == "test") {    
-    // Create the payload for a basic text message, which
-    // will be added to the body of our request to the Send API
-    response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"button",
-          "text":"Hi! Please press the button below to link your steam account and start using our service 👇",
-          "buttons":[{
-            "type": "web_url",
-            "title": "Google",
-            "url": `https://www.google.com`,
-            "webview_height_ratio": "tall"
-          }]
-        }
-      }
-    }
-  } else if (received_message.attachments) {
-    // Get the URL of the message attachment
-    let attachment_url = received_message.attachments[0].payload.url;
-    response = {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "generic",
-          "elements": [{
-            "title": "Is this the right picture?",
-            "subtitle": "Tap a button to answer.",
-            "image_url": attachment_url,
-            "buttons": [
-              {
-                "type": "postback",
-                "title": "Yes!",
-                "payload": "yes",
-              },
-              {
-                "type": "postback",
-                "title": "No!",
-                "payload": "no",
-              }
-            ],
-          }]
         }
       }
     }
@@ -232,43 +166,48 @@ function handlePostback(sender_psid, received_postback) {
   let payload = received_postback.payload;
 
   // Set the response based on the postback payload
-  if (payload === 'Market') {
+  if (payload === 'searchFoodPackage') {
     response = {
-      "text":'Please choose a game',
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Dota 2",
-        "payload":"Dota",
-        "image_url":"https://seeklogo.com/images/D/dota-2-logo-A8CAC9B4C9-seeklogo.com.png"
-      },{
-        "content_type":"text",
-        "title":"CS:GO",
-        "payload":"Csgo",
-        "image_url":"https://i.redd.it/1s0j5e4fhws01.png"
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":'Searching by a category "Blah, Blah, Blah, etc..."will help you to find a food package that fits your expectations, you can also get the popular food packages or the food packages that will happen today.',
+          "buttons":[
+          {
+            "type": "postback",
+            "title": "TODAY FOOD PACKAGES",
+            "payload": "todayFoodPack",
+          },
+          {
+            "type": "postback",
+            "title": "POPULAR FOOD PACKAGES",
+            "payload": "popFoodPack",
+          },
+          {
+            "type": "postback",
+            "title": "SEARCH BY CATEGORY",
+            "payload": "searchByCategory",
+          }
+          ]
+        }
       }
-      ]
     }
-  } else if (payload === 'yes') {
+  } else if (payload === 'searchbycategory') {
     response = {
-      "text":`What would you like to do?`,
+      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
       "quick_replies":[
       {
         "content_type":"text",
-        "title":"Purchase Items",
-        "payload":"DotaBuy",
-        "image_url":"https://i.imgur.com/HELIS0G.png"
+        "title":"Lunch",
+        "payload":"lunch",
       },{
         "content_type":"text",
-        "title":"Sell Items",
+        "title":"Dinner",
         "payload":"DotaSell",
-        "image_url":"https://i.imgur.com/BFehPAC.png"
       }
       ]
     }
-  }
-  else if (payload === 'no') {
-    response = { "text": "Oops, try sending another image." }
   }
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
