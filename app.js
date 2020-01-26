@@ -193,7 +193,7 @@ function handlePostback(sender_psid, received_postback) {
         }
       }
     }
-  } else if (payload === 'searchbycategory') {
+  } else if (payload === 'searchByCategory') {
     response = {
       "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
       "quick_replies":[
