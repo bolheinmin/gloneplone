@@ -155,7 +155,7 @@ function handleMessage(sender_psid, received_message) {
           "text":"Hi! Please press the button below to link your steam account and start using our service 👇",
           "buttons":[{
             "type": "web_url",
-            "title": "Link Account",
+            "title": "Google",
             "url": `https://www.google.com`,
             "webview_height_ratio": "tall"
           }]
