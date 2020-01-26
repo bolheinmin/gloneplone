@@ -155,24 +155,38 @@ function handleMessage(sender_psid, received_message) {
       }
     }
   }
-  else if (received_message.text == location) {
+  else if (received_message == "Hello") {
     response = {
-      "mid": "m_AG5Hz2Uq7tuwNEhXfYYKj8mJEM_QPpz5jdCK48PnKAjSdjfipqxqMvK8ma6AC8fplwlqLP_5cgXIbu7I3rBN0P",
-      "attachments": [
-      {
-        "title": "Facebook HQ",
-        "url": "https://www.facebook.com/l.php?u=https%....5-7Ocxrmg",
-        "type": "location",
-        "payload":
-        {
-          "coordinates":
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
           {
-            "lat": 37.483872693672,
-            "long": -122.14900441942
+            "title":"Welcome!",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            },
+            "buttons":[
+            {
+              "type":"web_url",
+              "url":"https://petersfancybrownhats.com",
+              "title":"View Website"
+            },{
+              "type":"postback",
+              "title":"Start Chatting",
+              "payload":"DEVELOPER_DEFINED_PAYLOAD"
+            }
+            ]
           }
+          ]
         }
       }
-      ]
     }
   }
   // Send the response message
