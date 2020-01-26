@@ -169,7 +169,7 @@ function handleMessage(sender_psid, received_message) {
           "elements":[
           {
             "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "image_url":"https://i.pinimg.com/564x/1e/3c/ac/1e3caca3b758438a7570bf3721c99167.jpg",
             "subtitle":"We have the right hat for everyone.",
             "default_action":
             {
@@ -191,7 +191,7 @@ function handleMessage(sender_psid, received_message) {
           },
           {
             "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "image_url":"https://i.pinimg.com/564x/da/9c/ec/da9cec1c63c4311dc03007d78bb603a6.jpg",
             "subtitle":"We have the right hat for everyone.",
             "default_action":
             {
