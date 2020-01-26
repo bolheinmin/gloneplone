@@ -131,11 +131,23 @@ function handleMessage(sender_psid, received_message) {
     response = {
       "text": `Min Ga Lar Par Sint!`
     }
-  }else if (received_message.text == "ni hao") {    
+  }else if (received_message.text == "google") {    
     // Create the payload for a basic text message, which
     // will be added to the body of our request to the Send API
     response = {
-      "text": `Hao Xie Xie. Ni Hao Mah!`
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":"Hi! Please press the button below to link your steam account and start using our service 👇",
+          "buttons":[{
+            "type": "web_url",
+            "title": "Link Account",
+            "url": `https://www.google.com`,
+            "webview_height_ratio": "tall"
+          }]
+        }
+      }
     }
   }
    else if (received_message.text) {    
