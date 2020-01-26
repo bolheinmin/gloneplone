@@ -155,6 +155,11 @@ function handleMessage(sender_psid, received_message) {
       }
     }
   }
+  else if (received_message.text == "Hein") {
+    response = {
+      "text":"Sout Yuu!"
+    }
+  }
   else if (received_message.text == "Hello") {
     response = {
       "attachment":{
