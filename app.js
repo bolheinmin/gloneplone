@@ -291,8 +291,14 @@ function callSendAPI(sender_psid, response) {
 
 function setupGetStartedButton(res){
         var messageData = {
-                "get_started":{"payload":"USER_DEFINED_PAYLOAD"}                
-        };
+                "get_started":{"payload":"USER_DEFINED_PAYLOAD"},
+                "greeting": [
+                {
+                  "locale":"default",
+                  "text":"Hello {{user_first_name}} \nWelcome to Glone Plone"
+                }
+                ]
+              };
         // Start the request
         request({
             url: 'https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+ PAGE_ACCESS_TOKEN,
