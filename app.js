@@ -209,7 +209,7 @@ function handlePostback(sender_psid, received_postback) {
       ]
     }
   }
-  else if (payload === 'lunch') {
+  else if (payload === 'lunch' || received_message.text === 'lunch') {
     response = {
       "attachment":{
         "type":"template",
