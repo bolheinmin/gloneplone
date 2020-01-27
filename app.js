@@ -169,7 +169,7 @@ function handleMessage(sender_psid, received_message) {
           "elements":[
           {
             "title":"Welcome!",
-            "image_url":"https://i.pinimg.com/564x/1e/3c/ac/1e3caca3b758438a7570bf3721c99167.jpg",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "subtitle":"We have the right hat for everyone.",
             "default_action":
             {
@@ -191,7 +191,29 @@ function handleMessage(sender_psid, received_message) {
           },
           {
             "title":"Welcome!",
-            "image_url":"https://i.pinimg.com/564x/da/9c/ec/da9cec1c63c4311dc03007d78bb603a6.jpg",
+            "image_url":"https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            },
+            "buttons":[
+            {
+              "type":"web_url",
+              "url":"https://petersfancybrownhats.com",
+              "title":"View Website"
+            },{
+              "type":"postback",
+              "title":"Start Chatting",
+              "payload":"DEVELOPER_DEFINED_PAYLOAD"
+            }
+            ]
+          },
+          {
+            "title":"Welcome!",
+            "image_url":"https://images.pexels.com/photos/372882/pexels-photo-372882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "subtitle":"We have the right hat for everyone.",
             "default_action":
             {
