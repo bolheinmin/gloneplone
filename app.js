@@ -209,7 +209,7 @@ function handlePostback(sender_psid, received_postback) {
       ]
     }
   }
-  else if (payload === 'lunch') {
+  else if (payload === 'todayFoodPack') {
     response = {
       "attachment":{
         "type":"template",
