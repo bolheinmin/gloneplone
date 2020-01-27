@@ -138,17 +138,17 @@ function handleMessage(sender_psid, received_message) {
           {
             "type": "postback",
             "title": "CHAT WITH A PERSON",
-            "payload": "chatWithPerson",
+            "payload": "chatWithPerson"
           },
           {
             "type": "postback",
             "title": "SEARCH A FOOD PACKAGE",
-            "payload": "searchFoodPackage",
+            "payload": "searchFoodPackage"
           },
           {
             "type": "postback",
             "title": "BUY",
-            "payload": "buy",
+            "payload": "buy"
           }
           ]
         }
@@ -177,17 +177,17 @@ function handlePostback(sender_psid, received_postback) {
           {
             "type": "postback",
             "title": "TODAY FOOD PACKAGES",
-            "payload": "todayFoodPack",
+            "payload": "todayFoodPack"
           },
           {
             "type": "postback",
             "title": "POPULAR FOOD PACKAGES",
-            "payload": "popFoodPack",
+            "payload": "popFoodPack"
           },
           {
             "type": "postback",
             "title": "SEARCH BY CATEGORY",
-            "payload": "searchByCategory",
+            "payload": "searchByCategory"
           }
           ]
         }
@@ -200,16 +200,16 @@ function handlePostback(sender_psid, received_postback) {
       {
         "content_type":"text",
         "title":"Lunch",
-        "payload":"lunch",
+        "payload":"lunch"
       },{
         "content_type":"text",
         "title":"Dinner",
-        "payload":"DotaSell",
+        "payload":"DotaSell"
       }
       ]
     }
   }
-  else if (payload === 'todayFoodPack') {
+  else if (payload === 'lunch') {
     response = {
       "attachment":{
         "type":"template",
