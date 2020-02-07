@@ -365,6 +365,11 @@ function handlePostback(sender_psid, received_postback) {
       }
     }
   }
+  else if (payload === 'get_started') {
+    response = {
+      "text":'Hello'
+    }
+  }
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
 }
