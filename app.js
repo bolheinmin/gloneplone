@@ -155,61 +155,7 @@ function handleMessage(sender_psid, received_message) {
       }
     }
   }
-  // Send the response message
-  callSendAPI(sender_psid, response);    
-}
-
-function handlePostback(sender_psid, received_postback) {
-  console.log('ok')
-   let response;
-  // Get the payload for the postback
-  let payload = received_postback.payload;
-
-  // Set the response based on the postback payload
-  if (payload === 'searchFoodPackage') {
-    response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"button",
-          "text":'Searching by a category "Blah, Blah, Blah, etc..."will help you to find a food package that fits your expectations, you can also get the popular food packages or the food packages that will happen today.',
-          "buttons":[
-          {
-            "type": "postback",
-            "title": "TODAY FOOD PACKAGES",
-            "payload": "todayFoodPack"
-          },
-          {
-            "type": "postback",
-            "title": "POPULAR FOOD PACKAGES",
-            "payload": "popFoodPack"
-          },
-          {
-            "type": "postback",
-            "title": "SEARCH BY CATEGORY",
-            "payload": "searchByCategory"
-          }
-          ]
-        }
-      }
-    }
-  } else if (payload === 'searchByCategory') {
-    response = {
-      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Lunch",
-        "payload":"lunch"
-      },{
-        "content_type":"text",
-        "title":"Dinner",
-        "payload":"DotaSell"
-      }
-      ]
-    }
-  }
-  else if (payload === 'lunch') {
+  else if (received_message.text === 'Lunch') {
     response = {
       "attachment":{
         "type":"template",
@@ -285,6 +231,60 @@ function handlePostback(sender_psid, received_postback) {
           ]
         }
       }
+    }
+  }
+  // Send the response message
+  callSendAPI(sender_psid, response);    
+}
+
+function handlePostback(sender_psid, received_postback) {
+  console.log('ok')
+   let response;
+  // Get the payload for the postback
+  let payload = received_postback.payload;
+
+  // Set the response based on the postback payload
+  if (payload === 'searchFoodPackage') {
+    response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":'Searching by a category "Blah, Blah, Blah, etc..."will help you to find a food package that fits your expectations, you can also get the popular food packages or the food packages that will happen today.',
+          "buttons":[
+          {
+            "type": "postback",
+            "title": "TODAY FOOD PACKAGES",
+            "payload": "todayFoodPack"
+          },
+          {
+            "type": "postback",
+            "title": "POPULAR FOOD PACKAGES",
+            "payload": "popFoodPack"
+          },
+          {
+            "type": "postback",
+            "title": "SEARCH BY CATEGORY",
+            "payload": "searchByCategory"
+          }
+          ]
+        }
+      }
+    }
+  } else if (payload === 'searchByCategory') {
+    response = {
+      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Lunch",
+        "payload":"lunch"
+      },{
+        "content_type":"text",
+        "title":"Dinner",
+        "payload":"DotaSell"
+      }
+      ]
     }
   }
   else if (payload === 'get_started') {
