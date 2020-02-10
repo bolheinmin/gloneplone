@@ -125,37 +125,7 @@ function handleMessage(sender_psid, received_message) {
   let response;
   
   // Checks if the message contains text
-  if (received_message.text == "Hi") {    
-    // Create the payload for a basic text message, which
-    // will be added to the body of our request to the Send API
-    response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"button",
-          "text":"Hi! I can help you find food packages.",
-          "buttons":[
-          {
-            "type": "postback",
-            "title": "CHAT WITH A PERSON",
-            "payload": "chatWithPerson"
-          },
-          {
-            "type": "postback",
-            "title": "SEARCH A FOOD PACKAGE",
-            "payload": "searchFoodPackage"
-          },
-          {
-            "type": "postback",
-            "title": "BUY",
-            "payload": "buy"
-          }
-          ]
-        }
-      }
-    }
-  }
-  else if (received_message.text === 'Lunch') {
+  if (received_message.text === 'Lunch') {
     response = {
       "attachment":{
         "type":"template",
@@ -200,7 +170,35 @@ function handlePostback(sender_psid, received_postback) {
   let payload = received_postback.payload;
 
   // Set the response based on the postback payload
-  if (payload === 'searchFoodPackage') {
+  if (payload === 'get_started') {
+    response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":"Hi! I can help you find food packages.",
+          "buttons":[
+          {
+            "type": "postback",
+            "title": "CHAT WITH A PERSON",
+            "payload": "chatWithPerson"
+          },
+          {
+            "type": "postback",
+            "title": "SEARCH A FOOD PACKAGE",
+            "payload": "searchFoodPackage"
+          },
+          {
+            "type": "postback",
+            "title": "BUY",
+            "payload": "buy"
+          }
+          ]
+        }
+      }
+    }
+  }
+  else if (payload === 'searchFoodPackage') {
     response = {
       "attachment":{
         "type":"template",
@@ -241,11 +239,6 @@ function handlePostback(sender_psid, received_postback) {
         "payload":"DotaSell"
       }
       ]
-    }
-  }
-  else if (payload === 'get_started') {
-    response = {
-      "text":'Hello'
     }
   }
   else if (payload === 'shop-now') {
