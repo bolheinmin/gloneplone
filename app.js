@@ -179,52 +179,8 @@ function handleMessage(sender_psid, received_message) {
               "title":"View Website"
             },{
               "type":"postback",
-              "title":"Start Chatting",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD"
-            }
-            ]
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action":
-            {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-            {
-              "type":"web_url",
-              "url":"https://petersfancybrownhats.com",
-              "title":"View Website"
-            },{
-              "type":"postback",
-              "title":"Start Chatting",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD"
-            }
-            ]
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://images.pexels.com/photos/372882/pexels-photo-372882.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action":
-            {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-            {
-              "type":"web_url",
-              "url":"https://petersfancybrownhats.com",
-              "title":"View Website"
-            },{
-              "type":"postback",
-              "title":"Start Chatting",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              "title":"Shop Now",
+              "payload":"shop-now"
             }
             ]
           }
@@ -290,6 +246,11 @@ function handlePostback(sender_psid, received_postback) {
   else if (payload === 'get_started') {
     response = {
       "text":'Hello'
+    }
+  }
+  else if (payload === 'shop-now') {
+    response = {
+      "text": 'Please Enter Amount..'
     }
   }
   // Send the message to acknowledge the postback
