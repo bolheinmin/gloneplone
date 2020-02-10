@@ -171,7 +171,9 @@ function handlePostback(sender_psid, received_postback) {
 
   // Set the response based on the postback payload
   if (payload === 'get_started') {
-    response = {
+  let response1 = {"text": "Hello! Welcome to GlonePlone"};
+  let response2 = {"text": "To view Lunch, type 'Lunch'"};  
+  let response3 = {
       "attachment":{
         "type":"template",
         "payload":{
@@ -196,7 +198,12 @@ function handlePostback(sender_psid, received_postback) {
           ]
         }
       }
-    }
+    };
+    callSend(sender_psid, response1).then(()=>{
+      return callSend(sender_psid, response2).then(()=>{
+        return callSend(sender_psid, response3);
+      });
+    });
   }
   else if (payload === 'searchFoodPackage') {
     response = {
