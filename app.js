@@ -250,7 +250,7 @@ function handlePostback(sender_psid, received_postback) {
   }
   else if (payload === 'shop-now') {
     response = {
-      "text": 'Choose a quantity:'
+      "text": 'Choose a quantity:',
       "quick_replies":[
       {
         "content_type":"text",
