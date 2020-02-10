@@ -250,7 +250,24 @@ function handlePostback(sender_psid, received_postback) {
   }
   else if (payload === 'shop-now') {
     response = {
-      "text": 'Please Enter Amount..'
+      "text": 'Choose a quantity:'
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"1",
+        "payload":"no-1"
+      },
+      {
+        "content_type":"text",
+        "title":"2",
+        "payload":"no-2"
+      },
+      {
+        "content_type":"text",
+        "title":"3",
+        "payload":"no-3"
+      }
+      ]
     }
   }
   // Send the message to acknowledge the postback
