@@ -127,9 +127,7 @@ function handleMessage(sender_psid, received_message) {
   // Checks if the message contains text
   if (received_message.text) {
     let user_message1 = received_message.text;
-    response = {
-      "text":user_message1
-    }
+    response = {"text": `Hello : "${user_message1}". Now send me an attachment!`};
   }
   else if (received_message.text === 'Lunch') {
     response = {
