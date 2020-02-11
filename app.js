@@ -125,7 +125,13 @@ function handleMessage(sender_psid, received_message) {
   let response;
   
   // Checks if the message contains text
-  if (received_message.text === 'Lunch') {
+  if (received_message.text) {
+    let user_message1 = received_message.text;
+    response = {
+      "text":user_message1
+    }
+  }
+  else if (received_message.text === 'Lunch') {
     response = {
       "attachment":{
         "type":"template",
