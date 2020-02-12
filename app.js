@@ -183,7 +183,7 @@ function handlePostback(sender_psid, received_postback) {
   let response2 = {"text": "Welcome to GlonePlone. Order and eat Great food."}
   let response3 = {"text": "......"};  
   let response4 = {
-    "text": "Please Pick a Food Category"
+    "text": "Please Pick a Food Category",
     "quick_replies":[
     {
       "content_type":"text",
