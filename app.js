@@ -127,10 +127,11 @@ function handleMessage(sender_psid, received_message) {
   // Checks if the message contains text
   if (received_message.text) {
     let user_message1 = received_message.text;
-    response = {"text": `Hello : "${user_message1}". Now send me an attachment!`};
+    response = {"text": `Hello  : "${user_message1}". Now send me an attachment!`};
   }
-  else if (received_message.text === 'Lunch') {
-    response = {
+  else if (received_message.text === 'Starter') {
+    let response1 = {"text": "Pick the item that you want"};
+    let response2 = {
       "attachment":{
         "type":"template",
         "payload":{
@@ -161,7 +162,10 @@ function handleMessage(sender_psid, received_message) {
           ]
         }
       }
-    }
+    };
+    callSend(sender_psid, response1).then(()=>{
+      return callSend(sender_psid, response2);
+    });
   }
   // Send the response message
   callSend(sender_psid, response);    
@@ -175,37 +179,44 @@ function handlePostback(sender_psid, received_postback) {
 
   // Set the response based on the postback payload
   if (payload === 'get_started') {
-  let response1 = {"text": "Hello! Welcome to GlonePlone"};
-  let response2 = {"text": "To view Lunch, type 'Lunch'"};  
-  let response3 = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"button",
-          "text":"Hi! I can help you find food packages.",
-          "buttons":[
-          {
-            "type": "postback",
-            "title": "CHAT WITH A PERSON",
-            "payload": "chatWithPerson"
-          },
-          {
-            "type": "postback",
-            "title": "SEARCH A FOOD PACKAGE",
-            "payload": "searchFoodPackage"
-          },
-          {
-            "type": "postback",
-            "title": "BUY",
-            "payload": "buy"
-          }
-          ]
-        }
-      }
-    };
+  let response1 = {"text": "Hello!"};
+  let response2 = {"text": "Welcome to GlonePlone. Order and eat Great food."}
+  let response3 = {"text": "......"};  
+  let response4 = {
+    "text": "Please Pick a Food Category"
+    "quick_replies":[
+    {
+      "content_type":"text",
+      "title":"Starter",
+      "payload":"pl-starter"
+    },
+    {
+      "content_type":"text",
+      "title":"Main Course",
+      "payload":"pl-mc"
+    },
+    {
+      "content_type":"text",
+      "title":"Accompaniments",
+      "payload":"pl-accom"
+    },
+    {
+      "content_type":"text",
+      "title":"Dessert & Drinks",
+      "payload":"pl-d-d"
+    },
+    {
+      "content_type":"text",
+      "title":"Snacks Combo",
+      "payload":"pl-snack"
+    }
+    ]
+  };
     callSend(sender_psid, response1).then(()=>{
       return callSend(sender_psid, response2).then(()=>{
-        return callSend(sender_psid, response3);
+        return callSend(sender_psid, response3).then(()=>{
+          return callSend(sender_psid, response4);
+        });
       });
     });
   }
