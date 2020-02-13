@@ -232,7 +232,7 @@ function handlePostback(sender_psid, received_postback) {
       });
     });
   }
-  else if (payload === 'searchFoodPackage') {
+  else if (payload === 'pl-meal-deli') {
     response = {
       "attachment":{
         "type":"template",
