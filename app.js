@@ -196,7 +196,7 @@ function handlePostback(sender_psid, received_postback) {
             },
             "buttons":[
             {
-              "type":"postback",,,
+              "type":"postback",
               "title":"Food Ingrediants",
               "payload":"pl-food-ingre"
             },{
