@@ -179,79 +179,59 @@ function handlePostback(sender_psid, received_postback) {
   let response2 = {"text": "Welcome to GlonePlone. Order and eat Great food."}
   let response3 = {"text": "......"};  
   let response4 = {
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
-           {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+          {
             "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "subtitle":"We have the right hat for everyone.",
-            "default_action": {
+            "default_action":
+            {
               "type": "web_url",
               "url": "https://petersfancybrownhats.com/view?item=103",
               "webview_height_ratio": "tall",
             },
             "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"View Website"
-              },{
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
+            {
+              "type":"postback",
+              "title":"Food Ingrediants",
+              "payload":"pl-food-ingre"
+            },{
+              "type":"postback",
+              "title":"Meal Delivery",
+              "payload":"pl-meal-deli"
+            }
+            ]
           },
           {
             "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "subtitle":"We have the right hat for everyone.",
-            "default_action": {
+            "default_action":
+            {
               "type": "web_url",
               "url": "https://petersfancybrownhats.com/view?item=103",
               "webview_height_ratio": "tall",
             },
             "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"View Website"
-              },{
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"View Website"
-              },{
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
+            {
+              "type":"postback",
+              "title":"Food Ingrediants",
+              "payload":"pl-food-ingre"
+            },{
+              "type":"postback",
+              "title":"Meal Delivery",
+              "payload":"pl-meal-deli"
+            }
+            ]
           }
-        ]
+          ]
+        }
       }
-    }
-  }
-};
+  };
     callSend(sender_psid, response1).then(()=>{
       return callSend(sender_psid, response2).then(()=>{
         return callSend(sender_psid, response3).then(()=>{
