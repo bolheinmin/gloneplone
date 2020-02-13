@@ -251,7 +251,6 @@ function handlePostback(sender_psid, received_postback) {
       }
     }
   }
-}
 };
     callSend(sender_psid, response1).then(()=>{
       return callSend(sender_psid, response2).then(()=>{
