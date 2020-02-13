@@ -206,6 +206,30 @@ function handlePostback(sender_psid, received_postback) {
             }
             ]
           }
+          ],
+          "elements":[
+          {
+            "title":"Welcome!",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            },
+            "buttons":[
+            {
+              "type":"postback",
+              "title":"Food Ingrediants",
+              "payload":"pl-food-ingre"
+            },{
+              "type":"postback",
+              "title":"Meal Delivery",
+              "payload":"pl-meal-deli"
+            }
+            ]
+          }
           ]
         }
       }
