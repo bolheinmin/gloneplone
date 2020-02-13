@@ -179,34 +179,36 @@ function handlePostback(sender_psid, received_postback) {
   let response2 = {"text": "Welcome to GlonePlone. Order and eat Great food."}
   let response3 = {"text": "......"};  
   let response4 = {
-    "text": "Please Pick a Food Category",
-    "quick_replies":[
-    {
-      "content_type":"text",
-      "title":"Starter",
-      "payload":"pl-starter"
-    },
-    {
-      "content_type":"text",
-      "title":"Main Course",
-      "payload":"pl-mc"
-    },
-    {
-      "content_type":"text",
-      "title":"Accompaniments",
-      "payload":"pl-accom"
-    },
-    {
-      "content_type":"text",
-      "title":"Dessert & Drinks",
-      "payload":"pl-d-d"
-    },
-    {
-      "content_type":"text",
-      "title":"Snacks Combo",
-      "payload":"pl-snack"
-    }
-    ]
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+          {
+            "title":"Welcome!",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            },
+            "buttons":[
+            {
+              "type":"postback",,,
+              "title":"Food Ingrediants",
+              "payload":"pl-food-ingre"
+            },{
+              "type":"postback",
+              "title":"Meal Delivery",
+              "payload":"pl-meal-deli"
+            }
+            ]
+          }
+          ]
+        }
+      }
   };
     callSend(sender_psid, response1).then(()=>{
       return callSend(sender_psid, response2).then(()=>{
