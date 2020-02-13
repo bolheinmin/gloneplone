@@ -199,10 +199,6 @@ function handlePostback(sender_psid, received_postback) {
               "type":"postback",
               "title":"Food Ingrediants",
               "payload":"pl-food-ingre"
-            },{
-              "type":"postback",
-              "title":"Meal Delivery",
-              "payload":"pl-meal-deli"
             }
             ]
           },
@@ -218,10 +214,6 @@ function handlePostback(sender_psid, received_postback) {
             },
             "buttons":[
             {
-              "type":"postback",
-              "title":"Food Ingrediants",
-              "payload":"pl-food-ingre"
-            },{
               "type":"postback",
               "title":"Meal Delivery",
               "payload":"pl-meal-deli"
