@@ -163,6 +163,7 @@ function handleMessage(sender_psid, received_message) {
             "title":"Welcome!",
             "image_url":"https://petersfancybrownhats.com/company_image.png",
             "subtitle":"We have the right hat for everyone.",
+            "subtitle":"ok",
             "buttons":[
               {
                 "type":"web_url",
