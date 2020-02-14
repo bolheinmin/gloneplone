@@ -429,7 +429,24 @@ function handlePostback(sender_psid, received_postback) {
   }
   else if (payload === 'pl-choose-vegetable') {
     response = {
-      "text":"Hello"
+      "text":`You can choose what you want to eat.`,
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Chicken",
+        "payload":"pl-chicken"
+      },
+      {
+        "content_type":"text",
+        "title":"Beef",
+        "payload":"pl-beef"
+      },
+      {
+        "content_type":"text",
+        "title":"Fish",
+        "payload":"pl-fish"
+      }
+      ]
     }
   }
   // Send the message to acknowledge the postback
