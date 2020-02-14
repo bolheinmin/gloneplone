@@ -125,7 +125,7 @@ function handleMessage(sender_psid, received_message) {
   let response;
   
   // Checks if the message contains text
-  if (received_message.text === 'Starter') {
+  if (received_message.text === 'lunch') {
     let response1 = {"text": "Pick the item that you want"};
     let response2 = {
       "attachment":{
@@ -145,13 +145,14 @@ function handleMessage(sender_psid, received_message) {
             },
             "buttons":[
             {
-              "type":"web_url",
-              "url":"https://petersfancybrownhats.com",
-              "title":"View Website"
-            },{
               "type":"postback",
-              "title":"Shop Now",
-              "payload":"shop-now"
+              "title":"Choose Meat",
+              "payload":"pl-meat"
+            },
+            {
+              "type":"postback",
+              "title":"Choose Vegetable",
+              "payload":"pl-vegetable"
             }
             ]
           }
