@@ -252,8 +252,18 @@ function handlePostback(sender_psid, received_postback) {
             "buttons":[
             {
               "type":"postback",
-              "title":"Food Ingrediants",
-              "payload":"pl-food-ingre"
+              "title":"Breakfast",
+              "payload":"pl-breakfast"
+            },
+            {
+              "type":"postback",
+              "title":"Lunch",
+              "payload":"pl-lunch"
+            },
+            {
+              "type":"postback",
+              "title":"Dinner",
+              "payload":"pl-dinner"
             }
             ]
           }
