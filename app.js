@@ -303,7 +303,7 @@ function handlePostback(sender_psid, received_postback) {
   }
   else if (payload === 'pl-choose-meat') {
     response = {
-      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+      "text":`You can choose what you want to eat.`,
       "quick_replies":[
       {
         "content_type":"text",
