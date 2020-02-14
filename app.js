@@ -213,8 +213,8 @@ function handlePostback(sender_psid, received_postback) {
             "buttons":[
             {
               "type":"postback",
-              "title":"Food Ingrediants",
-              "payload":"pl-food-ingre"
+              "title":"Meal Delivery",
+              "payload":"pl-meal-deli"
             }
             ]
           },
@@ -231,8 +231,9 @@ function handlePostback(sender_psid, received_postback) {
             "buttons":[
             {
               "type":"postback",
-              "title":"Meal Delivery",
-              "payload":"pl-meal-deli"
+              "title":"Food Ingrediants",
+              "payload":"pl-food-ingre"
+              
             }
             ]
           }
@@ -248,9 +249,11 @@ function handlePostback(sender_psid, received_postback) {
       });
     });
   }
-  else if (payload === 'pl-food-ingre') {
-    response = {
-      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+  else if (payload === 'pl-meal-deli') {
+    let response1 = {"text":"Thanks for your interest in GlonePlone's Meal Delivery service!"};
+    let response2 = {"text":"We deliver to Naypyitaw Pyinmana, Lwe"};
+    let response3 = {
+      "text":`Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.`,
       "quick_replies":[
       {
         "content_type":"text",
@@ -262,9 +265,14 @@ function handlePostback(sender_psid, received_postback) {
         "payload":"DotaSell"
       }
       ]
-    }
-  }
-  else if (payload === 'pl-meal-deli') {
+    };
+  callSend(sender_psid, response1).then(()=>{
+    return callSend(sender_psid, response2).then(()=>{
+      return callSend(sender_psid, response3);
+    });
+  });
+}
+  else if (payload === 'pl-food-ingre') {
     response = {
       "attachment":{
         "type":"template",
