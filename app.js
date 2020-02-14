@@ -166,8 +166,8 @@ function handleMessage(sender_psid, received_message) {
             "buttons":[
             {
               "type":"postback",
-              "title":"Start Chatting",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              "title":"Choose",
+              "payload":"pl-choosen-chicken"
             }
             ]
           },
@@ -178,8 +178,8 @@ function handleMessage(sender_psid, received_message) {
             "buttons":[
             {
               "type":"postback",
-              "title":"Start Chatting",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              "title":"Choose",
+              "payload":"pl-choosen-chicken"
             }
             ]
           },
@@ -190,8 +190,8 @@ function handleMessage(sender_psid, received_message) {
             "buttons":[
             {
              "type":"postback",
-             "title":"Start Chatting",
-             "payload":"DEVELOPER_DEFINED_PAYLOAD"
+             "title":"Choose",
+             "payload":"pl-choosen-chicken"
             }
             ]
           }
@@ -407,6 +407,11 @@ function handlePostback(sender_psid, received_postback) {
         "payload":"no-3"
       }
       ]
+    }
+  }
+  else if (payload === 'pl-choosen-chicken') {
+    response = {
+      "text":'Thanks'
     }
   }
   // Send the message to acknowledge the postback
