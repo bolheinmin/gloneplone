@@ -137,7 +137,7 @@ function handleMessage(sender_psid, received_message) {
           {
             "type":"postback",
             "title":"Choose Meat",
-            "payload":"pl-meat"
+            "payload":"pl-choose-meat"
           },
           {
             "type":"postback",
@@ -301,72 +301,28 @@ function handlePostback(sender_psid, received_postback) {
       }
     }
   }
-  else if (payload === 'pl-meat') {
+  else if (payload === 'pl-choose-meat') {
     response = {
-      "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
-           {
-            "title":"Chicken",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"Choose"
-              }            
-            ]      
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"View Website"
-              },{
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"View Website"
-              },{
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
-          }
-        ]
+      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Chicken",
+        "payload":"pl-chicken"
+      },
+      {
+        "content_type":"text",
+        "title":"Beef",
+        "payload":"pl-beef"
+      },
+      {
+        "content_type":"text",
+        "title":"Fish",
+        "payload":"pl-fish"
       }
+      ]
     }
   }
-}
     else if (payload === 'searchByCategory') {
     response = {
       "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
