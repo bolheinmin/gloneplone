@@ -433,18 +433,18 @@ function handlePostback(sender_psid, received_postback) {
       "quick_replies":[
       {
         "content_type":"text",
-        "title":"Chicken",
-        "payload":"pl-chicken"
+        "title":"Ka Zoon",
+        "payload":"pl-ka-zoon"
       },
       {
         "content_type":"text",
-        "title":"Beef",
-        "payload":"pl-beef"
+        "title":"Arr luu",
+        "payload":"pl-arr-luu"
       },
       {
         "content_type":"text",
-        "title":"Fish",
-        "payload":"pl-fish"
+        "title":"Pae",
+        "payload":"pl-pae"
       }
       ]
     }
