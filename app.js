@@ -166,18 +166,14 @@ function handleMessage(sender_psid, received_message) {
   else if (received_message.text === 'Hello') {
     response = {
       "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"generic",
-          "elements":[
-          {
-            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-          }
-          ]
-        }
+      "type":"image", 
+      "payload":{
+        "is_reusable": true,
+        "url":"http://www.messenger-rocks.com/image.jpg"
       }
     }
   }
+}
   // Send the response message
   callSend(sender_psid, response);    
 }
