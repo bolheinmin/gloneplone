@@ -142,7 +142,7 @@ function handleMessage(sender_psid, received_message) {
           {
             "type":"postback",
             "title":"Choose Vegetable",
-            "payload":"pl-vegetable"
+            "payload":"pl-choose-vegetable"
           }
         ]
       }
@@ -411,7 +411,25 @@ function handlePostback(sender_psid, received_postback) {
   }
   else if (payload === 'pl-choosen-chicken') {
     response = {
-      "text":'Thanks'
+      "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+        {
+          "type":"postback",
+          "title":"Choose Vegetable",
+          "payload":"pl-choose-vegetable"
+        }
+        ]
+      }
+    }
+  }
+  }
+  else if (payload === 'pl-choose-vegetable') {
+    response = {
+      "text":"Hello"
     }
   }
   // Send the message to acknowledge the postback
