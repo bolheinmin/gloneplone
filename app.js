@@ -129,36 +129,24 @@ function handleMessage(sender_psid, received_message) {
     let response1 = {"text": "Pick the item that you want"};
     let response2 = {
       "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"generic",
-          "elements":[
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to eat?",
+        "buttons":[
           {
-            "title":"Welcome!",
-            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action":
-            {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-            {
-              "type":"postback",
-              "title":"Choose Meat",
-              "payload":"pl-meat"
-            },
-            {
-              "type":"postback",
-              "title":"Choose Vegetable",
-              "payload":"pl-vegetable"
-            }
-            ]
+            "type":"postback",
+            "title":"Choose Meat",
+            "payload":"pl-meat"
+          },
+          {
+            "type":"postback",
+            "title":"Choose Vegetable",
+            "payload":"pl-vegetable"
           }
-          ]
-        }
+        ]
       }
+    }
     };
     callSend(sender_psid, response1).then(()=>{
       return callSend(sender_psid, response2);
