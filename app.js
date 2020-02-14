@@ -237,29 +237,32 @@ function handlePostback(sender_psid, received_postback) {
       "attachment":{
         "type":"template",
         "payload":{
-          "template_type":"button",
-          "text":'Searching by a category "Blah, Blah, Blah, etc..."will help you to find a food package that fits your expectations, you can also get the popular food packages or the food packages that will happen today.',
-          "buttons":[
+          "template_type":"generic",
+          "elements":[
           {
-            "type": "postback",
-            "title": "TODAY FOOD PACKAGES",
-            "payload": "todayFoodPack"
-          },
-          {
-            "type": "postback",
-            "title": "POPULAR FOOD PACKAGES",
-            "payload": "popFoodPack"
-          },
-          {
-            "type": "postback",
-            "title": "SEARCH BY CATEGORY",
-            "payload": "searchByCategory"
+            "title":"Welcome!",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            },
+            "buttons":[
+            {
+              "type":"postback",
+              "title":"Food Ingrediants",
+              "payload":"pl-food-ingre"
+            }
+            ]
           }
           ]
         }
       }
     }
-  } else if (payload === 'searchByCategory') {
+  }
+    else if (payload === 'searchByCategory') {
     response = {
       "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
       "quick_replies":[
