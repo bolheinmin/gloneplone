@@ -152,6 +152,31 @@ function handleMessage(sender_psid, received_message) {
       return callSend(sender_psid, response2);
     });
   }
+  else if (received_message.text === 'Chicken') {
+    response = {
+      "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+           {
+            "title":"Welcome!",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"We have the right hat for everyone."
+            },
+            "buttons":[
+              {
+                "type":"postback",
+                "title":"Choose",
+                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              }              
+            ]      
+          }
+        ]
+      }
+    }
+    }
+  }
   else if (received_message.text === 'Hello') {
     response = {
       "attachment":{
