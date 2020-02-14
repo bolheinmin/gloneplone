@@ -163,6 +163,29 @@ function handleMessage(sender_psid, received_message) {
       return callSend(sender_psid, response2);
     });
   }
+  else if (received_message.text === 'Hello') {
+    response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+          {
+            "title":"Welcome!",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            }
+          }
+          ]
+        }
+      }
+    }
+  }
   // Send the response message
   callSend(sender_psid, response);    
 }
