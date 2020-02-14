@@ -232,6 +232,22 @@ function handlePostback(sender_psid, received_postback) {
       });
     });
   }
+  else if (payload === 'pl-food-ingre') {
+    response = {
+      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Lunch",
+        "payload":"lunch"
+      },{
+        "content_type":"text",
+        "title":"Dinner",
+        "payload":"DotaSell"
+      }
+      ]
+    }
+  }
   else if (payload === 'pl-meal-deli') {
     response = {
       "attachment":{
