@@ -156,52 +156,7 @@ function handleMessage(sender_psid, received_message) {
     });
   }
   else if (received_message.text === 'Chicken') {
-    response = {
-      "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
-           {
-            "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "buttons":[
-            {
-              "type":"postback",
-              "title":"Choose",
-              "payload":"pl-choosen-chicken"
-            }
-            ]
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "buttons":[
-            {
-              "type":"postback",
-              "title":"Choose",
-              "payload":"pl-choosen-chicken"
-            }
-            ]
-          },
-          {
-            "title":"Welcome!",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"We have the right hat for everyone.",
-            "buttons":[
-            {
-             "type":"postback",
-             "title":"Choose",
-             "payload":"pl-choosen-chicken"
-            }
-            ]
-          }
-          ]
-        }
-      }
-    }
+    chicken(sender_psid);
   }
   else if (received_message.text === 'Hello') {
     response = {
@@ -526,6 +481,57 @@ async function greetUser(sender_psid){
                 "payload": "add-task",
               }
             ]
+        }
+      }
+    }
+  callSendAPI(sender_psid, response);
+}
+
+async function chicken(sender_psid){  
+  let response;
+  response = {
+      "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"generic",
+        "elements":[
+           {
+            "title":"Welcome!",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"We have the right hat for everyone.",
+            "buttons":[
+            {
+              "type":"postback",
+              "title":"Choose",
+              "payload":"pl-choosen-chicken"
+            }
+            ]
+          },
+          {
+            "title":"Welcome!",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"We have the right hat for everyone.",
+            "buttons":[
+            {
+              "type":"postback",
+              "title":"Choose",
+              "payload":"pl-choosen-chicken"
+            }
+            ]
+          },
+          {
+            "title":"Welcome!",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"We have the right hat for everyone.",
+            "buttons":[
+            {
+             "type":"postback",
+             "title":"Choose",
+             "payload":"pl-choosen-chicken"
+            }
+            ]
+          }
+          ]
         }
       }
     }
