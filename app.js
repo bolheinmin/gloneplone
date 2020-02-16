@@ -99,7 +99,7 @@ app.get('/webhook', (req, res) => {
   // Parse params from the webhook verification request
   let mode = req.query['hub.mode'];
   let token = req.query['hub.verify_token'];
-  let challenge = req.query['hub.challenge'];
+  let challenge = req.query['hub.challenge']; 
 
   
     
@@ -125,7 +125,10 @@ function handleMessage(sender_psid, received_message) {
   let response;
   
   // Checks if the message contains text
-  if (received_message.text === 'Lunch') {
+  if (received_message.text === 'Hi') {
+    greetUser(sender_psid);
+  }
+  else if (received_message.text === 'Lunch') {
     let response1 = {"text": "Pick the item that you want"};
     let response2 = {
       "attachment":{
@@ -483,6 +486,51 @@ async function callSend(sender_psid, response){
   return 1;
 }
 
+function getUserProfile(sender_psid) {
+  return new Promise(resolve => {
+    request({
+      "uri": "https://graph.facebook.com/"+sender_psid+"?fields=first_name,last_name,profile_pic&access_token=EAAGmSf4ySjMBACxNfZAdxEzIPZCT6lyZAyXZCKHmM2DnRO87hH3s5rRaofImCtfTLp3198fMrntu0K5kZBa0WGbcYx4RC4CUNRRku1U3GFvsBO5ZCllHGA6FaWMeL5ZALdph3omIDBanwAW27JTM5zFYslhbqVerzPn7lglQ4vO5r26P4gvIzBb",
+      "method": "GET"
+      }, (err, res, body) => {
+        if (!err) { 
+          let data = JSON.parse(body);  
+          resolve(data);                 
+    } else {
+      console.error("Error:" + err);
+    }
+    });
+  });
+}
+
+/***********************
+FUNCTION TO GREET USER 
+************************/
+async function greetUser(sender_psid){  
+  let user = await getUserProfile(sender_psid);   
+  let response;
+  response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "button",
+          "text": "Hello. "+user.first_name+" "+user.last_name+". It's so nice to meet you.What do you want to do next?",
+          "buttons": [
+              {
+                "type": "postback",
+                "title": "View Tasks",
+                "payload": "view-tasks",
+              },
+              {
+                "type": "postback",
+                "title": "Add Task!",
+                "payload": "add-task",
+              }
+            ]
+        }
+      }
+    }
+  callSendAPI(sender_psid, response);
+}
 
 function setupGetStartedButton(res){
   var messageData = {
