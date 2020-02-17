@@ -123,56 +123,13 @@ app.get('/webhook', (req, res) => {
 
 function handleMessage(sender_psid, received_message) {
   let response;
-  
   // Checks if the message contains text
   if (received_message.text === 'Hi') {
     greetUser(sender_psid);
-  }
-  else if (received_message.text === 'Lunch') {
-    let response1 = {"text": "Pick the item that you want"};
-    let response2 = {
-      "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"What do you want to eat?",
-        "buttons":[
-          {
-            "type":"postback",
-            "title":"Choose Meat",
-            "payload":"pl-choose-meat"
-          },
-          {
-            "type":"postback",
-            "title":"Choose Vegetable",
-            "payload":"pl-choose-vegetable"
-          }
-        ]
-      }
-    }
-    };
-    callSend(sender_psid, response1).then(()=>{
-      return callSend(sender_psid, response2);
-    });
-  }
-  else if (received_message.text === 'Chicken') {
+  } else if (received_message.text === 'Lunch') {
+    lunch(sender_psid);
+  } else if (received_message.text === 'Chicken') {
     chicken(sender_psid);
-  }
-  else if (received_message.text === 'Hello') {
-    response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"generic",
-          "elements":[
-          {
-            "title":"hello",
-            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-          }
-          ]
-        }
-      }
-    }
   }
   // Send the response message
   callSend(sender_psid, response);    
@@ -186,170 +143,17 @@ function handlePostback(sender_psid, received_postback) {
 
   // Set the response based on the postback payload
   if (payload === 'get_started') {
-    greetUser(sender_psid);
-  }
-  else if (payload === 'pl-meal-deli') {
-    let response1 = {"text":"Thanks for your interest in GlonePlone's Meal Delivery service!"};
-    let response2 = {"text":"We deliver to Naypyitaw Pyinmana, Lwe"};
-    let response3 = {
-      "text":`Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.`,
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Lunch",
-        "payload":"lunch"
-      },{
-        "content_type":"text",
-        "title":"Dinner",
-        "payload":"DotaSell"
-      }
-      ]
-    };
-  callSend(sender_psid, response1).then(()=>{
-    return callSend(sender_psid, response2).then(()=>{
-      return callSend(sender_psid, response3);
-    });
-  });
-}
-  else if (payload === 'pl-food-ingre') {
-    response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"generic",
-          "elements":[
-          {
-            "title":"Welcome!",
-            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            "subtitle":"We have the right hat for everyone.",
-            "default_action":
-            {
-              "type": "web_url",
-              "url": "https://petersfancybrownhats.com/view?item=103",
-              "webview_height_ratio": "tall",
-            },
-            "buttons":[
-            {
-              "type":"postback",
-              "title":"Breakfast",
-              "payload":"pl-breakfast"
-            },
-            {
-              "type":"postback",
-              "title":"Lunch",
-              "payload":"pl-lunch"
-            },
-            {
-              "type":"postback",
-              "title":"Dinner",
-              "payload":"pl-dinner"
-            }
-            ]
-          }
-          ]
-        }
-      }
-    }
-  }
-  else if (payload === 'pl-choose-meat') {
-    response = {
-      "text":`You can choose what you want to eat.`,
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Chicken",
-        "payload":"pl-chicken"
-      },
-      {
-        "content_type":"text",
-        "title":"Beef",
-        "payload":"pl-beef"
-      },
-      {
-        "content_type":"text",
-        "title":"Fish",
-        "payload":"pl-fish"
-      }
-      ]
-    }
-  }
-    else if (payload === 'searchByCategory') {
-    response = {
-      "text":`Yo! You can type categories to make searching the food packages you want to roll. For example. Lunch, Dinner.`,
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Lunch",
-        "payload":"lunch"
-      },{
-        "content_type":"text",
-        "title":"Dinner",
-        "payload":"DotaSell"
-      }
-      ]
-    }
-  }
-  else if (payload === 'shop-now') {
-    response = {
-      "text":'Choose a quantity:',
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"1",
-        "payload":"no-1"
-      },
-      {
-        "content_type":"text",
-        "title":"2",
-        "payload":"no-2"
-      },
-      {
-        "content_type":"text",
-        "title":"3",
-        "payload":"no-3"
-      }
-      ]
-    }
-  }
-  else if (payload === 'pl-choosen-chicken') {
-    response = {
-      "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"What do you want to do next?",
-        "buttons":[
-        {
-          "type":"postback",
-          "title":"Choose Vegetable",
-          "payload":"pl-choose-vegetable"
-        }
-        ]
-      }
-    }
-  }
-  }
-  else if (payload === 'pl-choose-vegetable') {
-    response = {
-      "text":`You can choose what you want to eat.`,
-      "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Ka Zoon",
-        "payload":"pl-ka-zoon"
-      },
-      {
-        "content_type":"text",
-        "title":"Arr luu",
-        "payload":"pl-arr-luu"
-      },
-      {
-        "content_type":"text",
-        "title":"Pae",
-        "payload":"pl-pae"
-      }
-      ]
-    }
+    greetUser (sender_psid);
+  } else if (payload === 'pl-meal-deli') {
+    mealDelivery (sender_psid);
+  } else if (payload === 'pl-food-ingre') {
+    foodIngredients (sender_psid);    
+  } else if (payload === 'pl-choose-meat') {
+    chooseMeat (sender_psid);
+  } else if (payload === 'pl-choosen-chicken') {
+    choosenChicken (sender_psid);
+  } else if (payload === 'pl-choose-vegetable') {
+    chooseVegetables (sender_psid);
   }
   // Send the message to acknowledge the postback
   callSend(sender_psid, response);
@@ -401,9 +205,8 @@ function getUserProfile(sender_psid) {
   });
 }
 
-/***********************
-FUNCTION TO GREET USER 
-************************/
+/*FUNCTION TO GREET USER*/
+
 async function greetUser(sender_psid){  
   let user = await getUserProfile(sender_psid);
   let response1 = {"text": "Hello. "+user.first_name+" "+user.last_name+". It's so nice to meet you."};
@@ -463,6 +266,182 @@ async function greetUser(sender_psid){
       });
     });
   }
+
+/* FUNCTION TO MEAL DELIVERY */
+
+async function mealDelivery(sender_psid){
+    let response1 = {"text":"Thanks for your interest in GlonePlone's Meal Delivery service!"};
+    let response2 = {"text":"We deliver to Naypyitaw Pyinmana, Lwe"};
+    let response3 = {
+      "text":`Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+      "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Lunch",
+        "payload":"lunch"
+      },
+      {
+        "content_type":"text",
+        "title":"Dinner",
+        "payload":"DotaSell"
+      }
+      ]
+    };
+  callSend(sender_psid, response1).then(()=>{
+    return callSend(sender_psid, response2).then(()=>{
+      return callSend(sender_psid, response3);
+    });
+  });
+}
+
+/* FUNCTION TO LUNCH */
+
+async function lunch (sender_psid) {
+  let response1 = {"text": "Pick the item that you want"};
+  let response2 = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to eat?",
+        "buttons":[
+          {
+            "type":"postback",
+            "title":"Choose Meat",
+            "payload":"pl-choose-meat"
+          },
+          {
+            "type":"postback",
+            "title":"Choose Vegetable",
+            "payload":"pl-choose-vegetable"
+          }
+        ]
+      }
+    }
+    };
+    callSend(sender_psid, response1).then(()=>{
+      return callSend(sender_psid, response2);
+    });
+  }
+
+/* FUNCTION TO CHOOSE MEAT */
+
+async function chooseMeat (sender_psid) {
+  let response;
+  response = {
+    "text":`You can choose what you want to eat.`,
+    "quick_replies":[
+    {
+      "content_type":"text",
+      "title":"Chicken",
+      "payload":"pl-chicken"
+    },
+    {
+      "content_type":"text",
+      "title":"Beef",
+      "payload":"pl-beef"
+    },
+    {
+      "content_type":"text",
+      "title":"Fish",
+      "payload":"pl-fish"
+    }
+    ]
+  }
+}
+
+/* FUNCTION TO CHOOSEN CHICKEN */
+
+async function choosenChicken (sender_psid) {
+  let response;
+  response = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+        {
+          "type":"postback",
+          "title":"Choose Vegetable",
+          "payload":"pl-choose-vegetable"
+        }
+        ]
+      }
+    }
+  }
+}
+
+/* FUNCTION TO CHOOSE VEGETABLES */
+
+async function chooseVegetables (sender_psid) {
+  let response;
+  response = {
+    "text":`You can choose what you want to eat.`,
+    "quick_replies":[
+    {
+      "content_type":"text",
+      "title":"Ka Zoon",
+      "payload":"pl-ka-zoon"
+    },
+    {
+      "content_type":"text",
+      "title":"Arr luu",
+      "payload":"pl-arr-luu"
+    },
+    {
+      "content_type":"text",
+      "title":"Pae",
+      "payload":"pl-pae"
+    }
+    ]
+  }
+}
+
+/* FUNCTION TO FOOD INGREDIENTS */
+
+async function foodIngredients (sender_psid) {
+  response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+          {
+            "title":"Welcome!",
+            "image_url":"https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "subtitle":"We have the right hat for everyone.",
+            "default_action":
+            {
+              "type": "web_url",
+              "url": "https://petersfancybrownhats.com/view?item=103",
+              "webview_height_ratio": "tall",
+            },
+            "buttons":[
+            {
+              "type":"postback",
+              "title":"Breakfast",
+              "payload":"pl-breakfast"
+            },
+            {
+              "type":"postback",
+              "title":"Lunch",
+              "payload":"pl-lunch"
+            },
+            {
+              "type":"postback",
+              "title":"Dinner",
+              "payload":"pl-dinner"
+            }
+            ]
+          }
+          ]
+        }
+      }
+    }
+  }
+
+/* FUNCTION TO CHICKEN */
 
 async function chicken(sender_psid){  
   let response;
