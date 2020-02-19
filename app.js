@@ -125,11 +125,11 @@ function handleMessage(sender_psid, received_message) {
   let response;
   // Checks if the message contains text
   if (received_message.text === 'Hi') {
-    greetUser(sender_psid);
+    greetUser (sender_psid);
   } else if (received_message.text === 'Lunch') {
-    lunch(sender_psid);
+    lunch (sender_psid);
   } else if (received_message.text === 'Chicken') {
-    chicken(sender_psid);
+    chicken (sender_psid);
   }
   // Send the response message
   callSend(sender_psid, response);    
@@ -149,7 +149,8 @@ function handlePostback(sender_psid, received_postback) {
   } else if (payload === 'pl-food-ingre') {
     foodIngredients (sender_psid);    
   } else if (payload === 'pl-choose-meat') {
-    chooseMeat (sender_psid);
+    response = {"text":"Hello.."}
+    //chooseMeat (sender_psid);
   } else if (payload === 'pl-choosen-chicken') {
     choosenChicken (sender_psid);
   } else if (payload === 'pl-choose-vegetable') {
@@ -443,7 +444,7 @@ async function foodIngredients (sender_psid) {
 
 /* FUNCTION TO CHICKEN */
 
-async function chicken(sender_psid){  
+async function chicken (sender_psid) {  
   let response;
   response = {
       "attachment":{
