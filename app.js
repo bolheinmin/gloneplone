@@ -528,24 +528,24 @@ function setupPersistentMenu(res){
                   "composer_input_disabled":false,
                   "call_to_actions":[
                       {
-                        "title":"Info",
+                        "title":"Menu",
                         "type":"nested",
                         "call_to_actions":[
                             {
-                              "title":"Help",
+                              "title":"Meal Delivery",
                               "type":"postback",
-                              "payload":"HELP_PAYLOAD"
+                              "payload":"pl-meal-deli"
                             },
                             {
-                              "title":"Contact Me",
+                              "title":"Food Ingrediants",
                               "type":"postback",
-                              "payload":"CONTACT_INFO_PAYLOAD"
+                              "payload":"pl-food-ingre"
                             }
                         ]
                       },
                       {
                         "type":"web_url",
-                        "title":"Visit website ",
+                        "title":"Visit website",
                         "url":"http://www.google.com",
                         "webview_height_ratio":"full"
                     }
