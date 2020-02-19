@@ -347,7 +347,8 @@ async function chooseMeat (sender_psid) {
       "payload":"pl-fish"
     }
     ]
-  }
+  };
+  callSend(sender_psid, response);
 }
 
 /* FUNCTION TO CHOOSEN CHICKEN */
@@ -369,7 +370,8 @@ async function choosenChicken (sender_psid) {
         ]
       }
     }
-  }
+  };
+  callSend(sender_psid, response);
 }
 
 /* FUNCTION TO CHOOSE VEGETABLES */
@@ -396,6 +398,7 @@ async function chooseVegetables (sender_psid) {
     }
     ]
   }
+  callSend(sender_psid, response);
 }
 
 /* FUNCTION TO FOOD INGREDIENTS */
@@ -438,7 +441,8 @@ async function foodIngredients (sender_psid) {
           ]
         }
       }
-    }
+    };
+    callSend(sender_psid, response);
   }
 
 /* FUNCTION TO CHICKEN */
@@ -491,7 +495,7 @@ async function chicken (sender_psid) {
         }
       }
     }
-  callSendAPI(sender_psid, response);
+  callSend(sender_psid, response);
 }
 
 function setupGetStartedButton(res){
