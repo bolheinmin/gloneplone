@@ -149,7 +149,7 @@ function handlePostback(sender_psid, received_postback) {
   } else if (payload === 'pl-food-ingre') {
     foodIngredients (sender_psid);    
   } else if (payload === 'pl-choose-meat') {
-    mealDelivery (sender_psid);
+    chooseMeat (sender_psid);
   } else if (payload === 'pl-choosen-chicken') {
     choosenChicken (sender_psid);
   } else if (payload === 'pl-choose-vegetable') {
