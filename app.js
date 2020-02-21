@@ -29,6 +29,12 @@ const
   body_parser = require('body-parser'),
   app = express().use(body_parser.json()); // creates express http server
 
+  let receipt = {
+    qty:false,
+  }
+
+  let userEnteredMsg = {};
+
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
@@ -126,6 +132,11 @@ function handleMessage(sender_psid, received_message) {
   // Checks if the message contains text
   if (received_message.text === 'Hi') {
     greetUser (sender_psid);
+  } else if (received_message.text && receipt.qty == true ) {
+    userEnteredMsg.qty = received_message.text;
+    response = {
+      "text":`${userEnteredMsg}`
+    }
   } else if (received_message.text === 'Lunch') {
     lunch (sender_psid);
   } else if (received_message.text === 'Chicken') {
