@@ -323,21 +323,21 @@ function foodPackage(sender_psid) {
   let response2 = {
     "text": "We deliver to Naypyitaw Pyinmana, Lwe"
   };
-  let response3 = {
-    "text": "Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.",
-    "buttons": [{
-        "type": "postback",
-        "title": "Ready to Cook",
-        /* အသင့်ချက်ပြုတ်ရန် အစားအစာများ */
-        "payload": "ready-to-cook"
-      },
-      {
-        "type": "postback",
-        "title": "Ready to Eat",
-        /* အသင့်စားသုံးရန် အစားအစာများ */
-        "payload": "ready-to-eat"
-      }
-    ]
+  let response3 = { "text": "We deliver to Naypyitaw Pyinmana, Lwe"
+    // "text": "Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.",
+    // "buttons": [{
+    //     "type": "postback",
+    //     "title": "Ready to Cook",
+    //     /* အသင့်ချက်ပြုတ်ရန် အစားအစာများ */
+    //     "payload": "ready-to-cook"
+    //   },
+    //   {
+    //     "type": "postback",
+    //     "title": "Ready to Eat",
+    //     /* အသင့်စားသုံးရန် အစားအစာများ */
+    //     "payload": "ready-to-eat"
+    //   }
+    // ]
   };
   callSend(sender_psid, response1).then(() => {
     return callSend(sender_psid, response2).then(() => {
