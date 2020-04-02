@@ -324,7 +324,7 @@ function foodPackage(sender_psid) {
     "text": "We deliver to Naypyitaw Pyinmana, Lwe"
   };
   let response3 = {
-    "text": `Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.`,
+    "text": "Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.",
     "buttons": [{
         "type": "postback",
         "title": "Ready to Cook",
