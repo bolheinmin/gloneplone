@@ -404,10 +404,16 @@ function chicken(sender_psid) {
             "image_url": "https://petersfancybrownhats.com/company_image.png",
             "subtitle": "We have the right hat for everyone.",
             "buttons": [{
-              "type": "postback",
-              "title": "View More",
-              "payload": "pl-choosen-chicken"
-            }]
+                "type": "postback",
+                "title": "View More",
+                "payload": "pl-choosen-chicken"
+              },
+              {
+                "type": "postback",
+                "title": "View More",
+                "payload": "pl-choosen-chicken"
+              }
+            ]
           },
           {
             "title": "Welcome!",
