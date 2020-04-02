@@ -323,7 +323,25 @@ function foodPackage(sender_psid) {
   let response2 = {
     "text": "We deliver to Naypyitaw Pyinmana, Lwe"
   };
-  let response3 = { "text": "We deliver to Naypyitaw Pyinmana, Lwe"
+  let response3 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "Ready to Cook",
+            "payload": "ready-to-cook"
+          },
+          {
+            "type": "postback",
+            "title": "Ready to Eat",
+            "payload": "ready-to-eat"
+          }
+        ]
+      }
+    }
     // "text": "Yo! You can make searching the food packages you want to roll. For example. Lunch, Dinner.",
     // "buttons": [{
     //     "type": "postback",
