@@ -229,7 +229,7 @@ function handlePostback(sender_psid, received_postback) {
   } else if (payload === 'pl-choose-vegetable') {
     chooseVegetables(sender_psid);
   } else if (payload === 'shop-now') {
-    chicken (sender_psid);
+    shopNow (sender_psid);
   }
   // Send the message to acknowledge the postback
   callSend(sender_psid, response);
@@ -286,22 +286,18 @@ function getUserProfile(sender_psid) {
 function shopNow(sender_psid) {
   let response;
   response = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "generic",
-        "elements": [{
-          "title": "Click to open webview?",
-          "buttons": [{
-              "type": "web_url",
-              "title": "webview",
-              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6" + sender_psid,
-              "webview_height_ratio": "full",
-              "messenger_extensions": true,
-            },
-
-          ],
-        }]
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title":"Visit Messenger"
+          }
+        ]
       }
     }
   }
@@ -450,9 +446,9 @@ function chicken(sender_psid) {
                 "payload": "view-ingre"
               },
               {
-                "type": "postback",
-                "title": "Shop Now",
-                "payload": "shop-now"
+                "type":"web_url",
+                "url":"https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
               }
             ]
           },
