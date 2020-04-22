@@ -146,7 +146,10 @@ function handleMessage(sender_psid, received_message) {
     lunch(sender_psid);
   } else if (received_message.text === 'Chicken') {
     chicken(sender_psid);
-  } else if (received_message.text === 'Test') {
+  } else if(received_message.text === 'Shop Now') {
+    shopNow(sender_psid);
+  }
+  else if (received_message.text === 'Test') {
     response = {
       "attachment": {
         "type": "template",
