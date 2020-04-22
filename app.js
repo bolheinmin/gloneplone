@@ -219,6 +219,8 @@ function handlePostback(sender_psid, received_postback) {
     chicken(sender_psid);
   } else if (payload === 'pl-choose-vegetable') {
     chooseVegetables(sender_psid);
+  } else if (payload === 'shop-now') {
+    shopNow (sender_psid);
   }
   // Send the message to acknowledge the postback
   callSend(sender_psid, response);
@@ -270,6 +272,31 @@ function getUserProfile(sender_psid) {
       }
     });
   });
+}
+
+function shopNow(sender_psid) {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "Click to open webview?",
+          "buttons": [{
+              "type": "web_url",
+              "title": "webview",
+              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+
+          ],
+        }]
+      }
+    }
+  }
+  callSendAPI(sender_psid, response);
 }
 
 /*FUNCTION TO GREET USER*/
@@ -406,17 +433,17 @@ function chicken(sender_psid) {
             "buttons": [{
                 "type": "postback",
                 "title": "How to cook?",
-                "payload": "pl-choosen-chicken"
+                "payload": "how-to-cook"
               },
               {
                 "type": "postback",
                 "title": "View ingredients",
-                "payload": "pl-choosen-chicken"
+                "payload": "view-ingre"
               },
               {
                 "type": "postback",
                 "title": "Shop Now",
-                "payload": "pl-choosen-chicken"
+                "payload": "shop-now"
               }
             ]
           },
