@@ -280,10 +280,10 @@ async function greetUser(sender_psid) {
     "text": "မင်္ဂလာပါ " + user.first_name + " " + user.last_name + ". New Hope Grocery မှ ကြိုဆိုပါတယ်ခင်ဗျ 🙂"
   };
   let response2 = {
-    "text": "မင်္ဂလာပါခင်ဗျ၊ myanpwel "
+    "text": "မင်္ဂလာပါခင်ဗျ၊"
   }
   let response3 = {
-    "text": "......"
+    "text": "Hello"
   };
   let response4 = {
     "attachment": {
@@ -298,7 +298,7 @@ async function greetUser(sender_psid) {
           },
           {
             "type": "postback",
-            "title": "Food Package ရှာမယ်",
+            "title": "Search Meals",
             "payload": "food-package"
           }
         ]
@@ -400,17 +400,22 @@ function chicken(sender_psid) {
       "payload": {
         "template_type": "generic",
         "elements": [{
-            "title": "Welcome!",
-            "image_url": "https://petersfancybrownhats.com/company_image.png",
-            "subtitle": "We have the right hat for everyone.",
+            "title": "Chicken Soup",
+            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
+            "subtitle": "Chicken soup is a soup made from chicken, simmered in water, usually with various other ingredients.",
             "buttons": [{
                 "type": "postback",
-                "title": "View More",
+                "title": "How to cook?",
                 "payload": "pl-choosen-chicken"
               },
               {
                 "type": "postback",
-                "title": "View More",
+                "title": "View ingredients",
+                "payload": "pl-choosen-chicken"
+              },
+              {
+                "type": "postback",
+                "title": "Shop Now",
                 "payload": "pl-choosen-chicken"
               }
             ]
