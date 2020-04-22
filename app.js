@@ -229,7 +229,7 @@ function handlePostback(sender_psid, received_postback) {
   } else if (payload === 'pl-choose-vegetable') {
     chooseVegetables(sender_psid);
   } else if (payload === 'shop-now') {
-    shopNow (sender_psid);
+    chicken (sender_psid);
   }
   // Send the message to acknowledge the postback
   callSend(sender_psid, response);
