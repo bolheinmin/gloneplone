@@ -146,10 +146,9 @@ function handleMessage(sender_psid, received_message) {
     lunch(sender_psid);
   } else if (received_message.text === 'Chicken') {
     chicken(sender_psid);
-  } else if(received_message.text === 'Shop Now') {
+  } else if (received_message.text === 'Shop Now') {
     shopNow(sender_psid);
-  }
-  else if (received_message.text === 'Test') {
+  } else if (received_message.text === 'Test') {
     response = {
       "attachment": {
         "type": "template",
@@ -209,6 +208,35 @@ function handleMessage(sender_psid, received_message) {
   callSend(sender_psid, response);
 }
 
+/*********************************************
+Function to handle when user click button
+**********************************************/
+const handlePostback = (sender_psid, received_postback) => {
+  let payload = received_postback.payload;
+
+  switch (payload) {
+    case "get_started":
+      greetUser(sender_psid);
+    case "food-package":
+      foodPackage(sender_psid);
+      break;
+    case "ready-to-cook":
+      readyToCook(sender_psid);
+      break;
+    case "chicken":
+      chicken(sender_psid);
+      break;
+    case "cs-how-to-cook":
+      csHowToCook(sender_psid);
+      break;
+    case "cs-view-ingre":
+      csViewIngredients(sender_psid);
+      break;
+    default:
+      defaultReply(sender_psid);
+  }
+}
+/*
 function handlePostback(sender_psid, received_postback) {
   console.log('ok')
   let response;
@@ -224,19 +252,23 @@ function handlePostback(sender_psid, received_postback) {
     foodPackage(sender_psid);
   } else if (payload === 'ready-to-cook') {
     readyToCook(sender_psid);
-  } else if (payload === 'pl-chicken') {
+  } else if (payload === 'chicken') {
     chicken(sender_psid);
+  } else if (payload === 'cs-how-to-cook') {
+    csHowToCook(sender_psid);
+  } else if (payload === 'cs-view-ingre') {
+    csViewIngredients(sender_psid);
   } else if (payload === 'pl-choose-vegetable') {
     chooseVegetables(sender_psid);
   } else if (payload === 'shop-now') {
-    shopNow (sender_psid);
+    shopNow(sender_psid);
   }
   // Send the message to acknowledge the postback
   callSend(sender_psid, response);
-}
+}*/
 
 
-function callSendAPI(sender_psid, response) {
+const callSendAPI = (sender_psid, response) => {
   let request_body = {
     "recipient": {
       "id": sender_psid
@@ -267,7 +299,7 @@ async function callSend(sender_psid, response) {
   return 1;
 }
 
-function getUserProfile(sender_psid) {
+const getUserProfile = (sender_psid) => {
   return new Promise(resolve => {
     request({
       "uri": "https://graph.facebook.com/" + sender_psid + "?fields=first_name,last_name,profile_pic&access_token=EAAC0Amc4MRgBAGR5JMXzFDQBBZCbHRjOkVPeKg3UokgQzZAYlIAZBQoPnwsKo6FZBmSOd5kPm16TUJEFdveL9iZA4IAG2EN1IozqH17jKueHNU2rPObJYjxkL6Kq3WttHxYhaj83SGYNK9ZBEtYXkJTOiXVV9key1xS8WZCpWXoQy3bluiMysR5IYlm1Q9QfVQZD",
@@ -281,27 +313,6 @@ function getUserProfile(sender_psid) {
       }
     });
   });
-}
-
-function shopNow(sender_psid) {
-  let response;
-  response = {
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"What do you want to do next?",
-        "buttons":[
-          {
-            "type":"web_url",
-            "url":"https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title":"Visit Messenger"
-          }
-        ]
-      }
-    }
-  }
-  callSendAPI(sender_psid, response);
 }
 
 /*FUNCTION TO GREET USER*/
@@ -348,7 +359,7 @@ async function greetUser(sender_psid) {
 
 /* FUNCTION TO MEAL DELIVERY */
 
-function foodPackage(sender_psid) {
+const foodPackage = (sender_psid) => {
   let response1 = {
     "text": "Thanks for your interest in GlonePlone's Meal Delivery service!"
   };
@@ -398,14 +409,14 @@ function foodPackage(sender_psid) {
 
 /* Function to ReadyToCook */
 
-function readyToCook(sender_psid) {
+const readyToCook = (sender_psid) => {
   let response;
   response = {
     "text": `You can choose what you want to eat.`,
     "quick_replies": [{
         "content_type": "text",
         "title": "Chicken",
-        "payload": "pl-chicken"
+        "payload": "chicken"
       },
       {
         "content_type": "text",
@@ -424,7 +435,7 @@ function readyToCook(sender_psid) {
 
 /* Function to Chicken */
 
-function chicken(sender_psid) {
+const chicken = (sender_psid) => {
   let response;
   response = {
     "attachment": {
@@ -438,16 +449,16 @@ function chicken(sender_psid) {
             "buttons": [{
                 "type": "postback",
                 "title": "How to cook?",
-                "payload": "how-to-cook"
+                "payload": "cs-how-to-cook"
               },
               {
                 "type": "postback",
                 "title": "View ingredients",
-                "payload": "view-ingre"
+                "payload": "cs-view-ingre"
               },
               {
-                "type":"web_url",
-                "url":"https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
                 "title": "Shop Now"
               }
             ]
@@ -457,26 +468,105 @@ function chicken(sender_psid) {
             "image_url": "https://petersfancybrownhats.com/company_image.png",
             "subtitle": "We have the right hat for everyone.",
             "buttons": [{
-              "type": "postback",
-              "title": "View More",
-              "payload": "pl-choosen-chicken"
-            }]
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "how-to-cook"
+              },
+              {
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "view-ingre"
+              },
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
           },
           {
             "title": "Welcome!",
             "image_url": "https://petersfancybrownhats.com/company_image.png",
             "subtitle": "We have the right hat for everyone.",
             "buttons": [{
-              "type": "postback",
-              "title": "View More",
-              "payload": "pl-choosen-chicken"
-            }]
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "how-to-cook"
+              },
+              {
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "view-ingre"
+              },
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
           }
         ]
       }
     }
   }
   callSend(sender_psid, response);
+}
+
+const csHowToCook = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ကြက်သားကိုရေဆေးသန့်စင်ပြီး ဆား၊ ABC ပဲငံပြာရည်အကြည်၊ အရသာမှုန့်အနည်းငယ်ဖြင့်အရသာနှပ်ထားပါ။'\n'၂။ ချဥ်စော်ခါးသီးကို အခွံခွာအစေ့ထုတ်ပြီးလေးစိတ်ခြမ်းကာ ဆားရည်မှာစိမ်ထားပါ။ '\n'၃။ ကြွက်နားရွက်မှိုကိုရေစိမ်သန့်စင်ပြီး ခပ်ပါးပါးလှီးဖြတ်ပါ။'\n' ၄။ ငရုတ်သီးစိမ်း ၊ ကြက်သွန်ဖြူ ကိုခပ်ကြမ်းကြမ်းဓားပြားရိုက်ထားပါ။'\n' ၅။ ရှမ်းနံနံနှင့်ကြက်သွန်မြိတ်ကို လက်တဆစ်ခန့်လှီးဖြတ်ထားပါ။'\n' ၆။ အိုးတစ်လုံးမှာအရသာနယ်ထားတဲ့ကဿ်သားတွေထည့်ပြီး ချင်းတစ်ဝက်ကိုဓားပြားရိုက်ထည့်ပါ။ရေမြှုပ်ရုံလေးထည့်ပြီး ပြုတ်ပါ။'\n' ၇။ ထွက်လာတဲ့အမြှုပ်နှင့်အညစ်အကြေးတွေကိုစစ်ထုတ်ပါ(ဟင်းရည်ကြည်စေရန်အတွက်)တပွက်ဆူလာလျှင် ရေအနည်းငယ်ထပ်ဖြည့်ပြီး နောက်တစ်ကြိမ်ဆူလျှင်ဖိုခွင်မှခေတ္တချထားပါ။'\n' ၈။ ဒယ်အိုးတစ်လုံးမှာ ဆီအနည်းငယ်ကိုအပူပေးပြီးလက်ကျန်ချင်းကိုပါးပါးလှီးဆီသပ်ပါ။ ဓားပြားရိုက်ထားတဲ့ကြက်သွန်ဖြူ ၊ငရုတ်သီးစိမ်းထည့်ပါ။ ချဥ်စော်ခါးသီးနဲ့ကြွက်နားရွက်မှိုတွေထည့်ဆီသပ်ပါ။'\n' ၉။ မွှေးလာလျှင် ပြုတ်ထားတဲ့ကြက်သားအိုးထည့်သို့လောင်းထည့်ပြီး မီးရှိန်လျှော့ချကာတပွက်ဆူအနေအထားဖြင့်ချက်ပါ။'\n' ၁၀။ လိုအပ်ပါက ABC ပဲငံပြာရည်အကြည်နှင့်အရသာမှုန့်ထပ်မံဖြည့်စွက်ပါ။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "View Ingredients",
+            "payload": "cs-view-ingre"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const csViewIngredients = (sender_psid) => {
+  let response1 = {
+    "text": "ဗမာကြက် = ၅ဝ ကျပ်သား'\n'ချဉ်စော်ခါးသီ = ၁ ခြမ်း'\n'ချင်းကြီးကြီး = ၁တက်'\n'ကြက်သွန်ဖြူ = ၅မွှာ'\n'ငရုတ်သီးစိမ်း = ၃တောင့်'\n'ကြွက်နားရွယ်မှို = အနည်းငယ်'\n'ရှမ်းနံနံ+ကြက်သွန်မြိတ် = အနည်းငယ်စီ"
+  };
+  let response2 = {
+    "text": `You can choose what you want to eat.`,
+    "quick_replies": [{
+        "content_type": "text",
+        "title": "1",
+        "payload": "pl-ka-zoon"
+      },
+      {
+        "content_type": "text",
+        "title": "2",
+        "payload": "pl-arr-luu"
+      },
+      {
+        "content_type": "text",
+        "title": "3",
+        "payload": "pl-pae"
+      }
+    ]
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
 }
 
 /* FUNCTION TO LUNCH */
