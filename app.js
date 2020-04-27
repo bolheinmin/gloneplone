@@ -543,7 +543,7 @@ const csCheck = (sender_psid) => {
       }
     ]
   }
-  callSend(sender_psid, response1);
+  callSend(sender_psid, response);
 }
 
 const csIngreForThree = (sender_psid) => {
