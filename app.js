@@ -148,61 +148,6 @@ function handleMessage(sender_psid, received_message) {
     chicken(sender_psid);
   } else if (received_message.text === 'Shop Now') {
     shopNow(sender_psid);
-  } else if (received_message.text === 'Test') {
-    response = {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "receipt",
-          "recipient_name": "Stephane Crozatier",
-          "order_number": "12345678902",
-          "currency": "USD",
-          "payment_method": "Visa 2345",
-          "order_url": "http://petersapparel.parseapp.com/order?order_id=123456",
-          "timestamp": "1428444852",
-          "address": {
-            "street_1": "1 Hacker Way",
-            "street_2": "",
-            "city": "Menlo Park",
-            "postal_code": "94025",
-            "state": "CA",
-            "country": "US"
-          },
-          "summary": {
-            "subtotal": 75.00,
-            "shipping_cost": 4.95,
-            "total_tax": 6.19,
-            "total_cost": 56.14
-          },
-          "adjustments": [{
-              "name": "New Customer Discount",
-              "amount": 20
-            },
-            {
-              "name": "$10 Off Coupon",
-              "amount": 10
-            }
-          ],
-          "elements": [{
-              "title": "Classic White T-Shirt",
-              "subtitle": "100% Soft and Luxurious Cotton",
-              "quantity": 2,
-              "price": 50,
-              "currency": "USD",
-              "image_url": "http://petersapparel.parseapp.com/img/whiteshirt.png"
-            },
-            {
-              "title": "Classic Gray T-Shirt",
-              "subtitle": "100% Soft and Luxurious Cotton",
-              "quantity": 1,
-              "price": 25,
-              "currency": "USD",
-              "image_url": "http://petersapparel.parseapp.com/img/grayshirt.png"
-            }
-          ]
-        }
-      }
-    }
   }
   // Send the response message
   callSend(sender_psid, response);
@@ -226,11 +171,17 @@ const handlePostback = (sender_psid, received_postback) => {
     case "chicken":
       chicken(sender_psid);
       break;
+    case "cs-view-ingre":
+      csViewIngredients(sender_psid);
+      break;
     case "cs-how-to-cook":
       csHowToCook(sender_psid);
       break;
-    case "cs-view-ingre":
-      csViewIngredients(sender_psid);
+    case "cs-check":
+      csCheck(sender_psid);
+      break;
+    case "cs-ingre-for-three":
+      csIngreForThree(sender_psid);
       break;
     default:
       defaultReply(sender_psid);
@@ -512,9 +463,9 @@ const chicken = (sender_psid) => {
   callSend(sender_psid, response);
 }
 
-const csHowToCook = (sender_psid) => {
+const csViewIngredients = (sender_psid) => {
   let response1 = {
-    "text": "၁။ ကြက်သားကိုရေဆေးသန့်စင်ပြီး ဆား၊ ABC ပဲငံပြာရည်အကြည်၊ အရသာမှုန့်အနည်းငယ်ဖြင့်အရသာနှပ်ထားပါ။ \n\n ၂။ ချဥ်စော်ခါးသီးကို အခွံခွာအစေ့ထုတ်ပြီးလေးစိတ်ခြမ်းကာ ဆားရည်မှာစိမ်ထားပါ။ \n\n ၃။ ကြွက်နားရွက်မှိုကိုရေစိမ်သန့်စင်ပြီး ခပ်ပါးပါးလှီးဖြတ်ပါ။ \n\n ၄။ ငရုတ်သီးစိမ်း ၊ ကြက်သွန်ဖြူ ကိုခပ်ကြမ်းကြမ်းဓားပြားရိုက်ထားပါ။ \n\n ၅။ ရှမ်းနံနံနှင့်ကြက်သွန်မြိတ်ကို လက်တဆစ်ခန့်လှီးဖြတ်ထားပါ။ \n\n ၆။ အိုးတစ်လုံးမှာအရသာနယ်ထားတဲ့ကဿ်သားတွေထည့်ပြီး ချင်းတစ်ဝက်ကိုဓားပြားရိုက်ထည့်ပါ။ရေမြှုပ်ရုံလေးထည့်ပြီး ပြုတ်ပါ။ \n\n ၇။ ထွက်လာတဲ့အမြှုပ်နှင့်အညစ်အကြေးတွေကိုစစ်ထုတ်ပါ(ဟင်းရည်ကြည်စေရန်အတွက်)တပွက်ဆူလာလျှင် ရေအနည်းငယ်ထပ်ဖြည့်ပြီး နောက်တစ်ကြိမ်ဆူလျှင်ဖိုခွင်မှခေတ္တချထားပါ။ \n\n ၈။ ဒယ်အိုးတစ်လုံးမှာ ဆီအနည်းငယ်ကိုအပူပေးပြီးလက်ကျန်ချင်းကိုပါးပါးလှီးဆီသပ်ပါ။ ဓားပြားရိုက်ထားတဲ့ကြက်သွန်ဖြူ ၊ငရုတ်သီးစိမ်းထည့်ပါ။ ချဥ်စော်ခါးသီးနဲ့ကြွက်နားရွက်မှိုတွေထည့်ဆီသပ်ပါ။ \n\n ၉။ မွှေးလာလျှင် ပြုတ်ထားတဲ့ကြက်သားအိုးထည့်သို့လောင်းထည့်ပြီး မီးရှိန်လျှော့ချကာတပွက်ဆူအနေအထားဖြင့်ချက်ပါ။ \n\n ၁၀။ လိုအပ်ပါက ABC ပဲငံပြာရည်အကြည်နှင့်အရသာမှုန့်ထပ်မံဖြည့်စွက်ပါ။"
+    "text": "ဗမာကြက် = ၅ဝ ကျပ်သား \n\n ချဉ်စော်ခါးသီ = ၁ ခြမ်း \n\n ချင်းကြီးကြီး = ၁တက် \n\n ကြက်သွန်ဖြူ = ၅မွှာ \n\n ငရုတ်သီးစိမ်း = ၃တောင့် \n\n ကြွက်နားရွယ်မှို = အနည်းငယ် \n\n ရှမ်းနံနံ+ကြက်သွန်မြိတ် = အနည်းငယ်စီ"
   };
   let response2 = {
     "attachment": {
@@ -524,8 +475,13 @@ const csHowToCook = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "View Ingredients",
-            "payload": "cs-view-ingre"
+            "title": "Check!",
+            "payload": "cs-check"
+          },
+          {
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "cs-how-to-cook"
           },
           {
             "type": "web_url",
@@ -541,28 +497,106 @@ const csHowToCook = (sender_psid) => {
   });
 }
 
-const csViewIngredients = (sender_psid) => {
-  let response1 = {
-    "text": "ဗမာကြက် = ၅ဝ ကျပ်သား \n\n ချဉ်စော်ခါးသီ = ၁ ခြမ်း \n\n ချင်းကြီးကြီး = ၁တက် \n\n ကြက်သွန်ဖြူ = ၅မွှာ \n\n ငရုတ်သီးစိမ်း = ၃တောင့် \n\n ကြွက်နားရွယ်မှို = အနည်းငယ် \n\n ရှမ်းနံနံ+ကြက်သွန်မြိတ် = အနည်းငယ်စီ"
-  };
-  let response2 = {
+const csCheck = (sender_psid) => {
+  let response;
+  response = {
     "text": `You can choose what you want to eat.`,
     "quick_replies": [{
         "content_type": "text",
-        "title": "1",
-        "payload": "pl-ka-zoon"
+        "title": "3",
+        "payload": "cs-ingre-for-three"
       },
       {
         "content_type": "text",
-        "title": "2",
+        "title": "4",
         "payload": "pl-arr-luu"
       },
       {
         "content_type": "text",
-        "title": "3",
+        "title": "5",
+        "payload": "pl-pae"
+      },
+      {
+        "content_type": "text",
+        "title": "6",
+        "payload": "pl-pae"
+      },
+      {
+        "content_type": "text",
+        "title": "7",
+        "payload": "pl-pae"
+      },
+      {
+        "content_type": "text",
+        "title": "8",
+        "payload": "pl-pae"
+      },
+      {
+        "content_type": "text",
+        "title": "9",
+        "payload": "pl-pae"
+      },
+      {
+        "content_type": "text",
+        "title": "10",
         "payload": "pl-pae"
       }
     ]
+  }
+  callSend(sender_psid, response1);
+}
+
+const csIngreForThree = (sender_psid) => {
+  let response1 = {
+    "text": ""
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "Check!",
+            "payload": "cs-check"
+          },
+          {
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "cs-how-to-cook"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const csHowToCook = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ကြက်သားကိုရေဆေးသန့်စင်ပြီး ဆား၊ ABC ပဲငံပြာရည်အကြည်၊ အရသာမှုန့်အနည်းငယ်ဖြင့်အရသာနှပ်ထားပါ။ \n\n ၂။ ချဥ်စော်ခါးသီးကို အခွံခွာအစေ့ထုတ်ပြီးလေးစိတ်ခြမ်းကာ ဆားရည်မှာစိမ်ထားပါ။ \n\n ၃။ ကြွက်နားရွက်မှိုကိုရေစိမ်သန့်စင်ပြီး ခပ်ပါးပါးလှီးဖြတ်ပါ။ \n\n ၄။ ငရုတ်သီးစိမ်း ၊ ကြက်သွန်ဖြူ ကိုခပ်ကြမ်းကြမ်းဓားပြားရိုက်ထားပါ။ \n\n ၅။ ရှမ်းနံနံနှင့်ကြက်သွန်မြိတ်ကို လက်တဆစ်ခန့်လှီးဖြတ်ထားပါ။ \n\n ၆။ အိုးတစ်လုံးမှာအရသာနယ်ထားတဲ့ကဿ်သားတွေထည့်ပြီး ချင်းတစ်ဝက်ကိုဓားပြားရိုက်ထည့်ပါ။ရေမြှုပ်ရုံလေးထည့်ပြီး ပြုတ်ပါ။ \n\n ၇။ ထွက်လာတဲ့အမြှုပ်နှင့်အညစ်အကြေးတွေကိုစစ်ထုတ်ပါ(ဟင်းရည်ကြည်စေရန်အတွက်)တပွက်ဆူလာလျှင် ရေအနည်းငယ်ထပ်ဖြည့်ပြီး နောက်တစ်ကြိမ်ဆူလျှင်ဖိုခွင်မှခေတ္တချထားပါ။ \n\n ၈။ ဒယ်အိုးတစ်လုံးမှာ ဆီအနည်းငယ်ကိုအပူပေးပြီးလက်ကျန်ချင်းကိုပါးပါးလှီးဆီသပ်ပါ။ ဓားပြားရိုက်ထားတဲ့ကြက်သွန်ဖြူ ၊ငရုတ်သီးစိမ်းထည့်ပါ။ ချဥ်စော်ခါးသီးနဲ့ကြွက်နားရွက်မှိုတွေထည့်ဆီသပ်ပါ။ \n\n ၉။ မွှေးလာလျှင် ပြုတ်ထားတဲ့ကြက်သားအိုးထည့်သို့လောင်းထည့်ပြီး မီးရှိန်လျှော့ချကာတပွက်ဆူအနေအထားဖြင့်ချက်ပါ။ \n\n ၁၀။ လိုအပ်ပါက ABC ပဲငံပြာရည်အကြည်နှင့်အရသာမှုန့်ထပ်မံဖြည့်စွက်ပါ။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
   };
   callSend(sender_psid, response1).then(() => {
     return callSend(sender_psid, response2);
