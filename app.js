@@ -47,26 +47,18 @@ app.post('/webhook', (req, res) => {
 
   // Check the webhook event is from a Page subscription
   if (body.object === 'page') {
-
     body.entry.forEach(function (entry) {
 
-      // Gets the body of the webhook event
       let webhook_event = entry.messaging[0];
-      console.log(webhook_event);
-
-
-      // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
-      console.log('Sender ID: ' + sender_psid);
 
-
-
-      // Check if the event is a message or postback and
-      // pass the event to the appropriate handler function
       if (webhook_event.message) {
-        handleMessage(sender_psid, webhook_event.message);
+        if (webhook_event.message.quick_reply) {
+          handleQuickReply(sender_psid, webhook_event.message.quick_reply.payload);
+        } else {
+          handleMessage(sender_psid, webhook_event.message);
+        }
       } else if (webhook_event.postback) {
-
         handlePostback(sender_psid, webhook_event.postback);
       }
 
@@ -153,6 +145,25 @@ function handleMessage(sender_psid, received_message) {
   callSend(sender_psid, response);
 }
 
+/**********************************************
+Function to Handle when user send quick reply message
+***********************************************/
+
+function handleQuickReply(sender_psid, received_message) {
+
+  switch (received_message) {
+    case "cs-ingre-for-three":
+      csIngreForThree(sender_psid);
+      break;
+    case "off":
+      showQuickReplyOff(sender_psid);
+      break;
+    default:
+      defaultReply(sender_psid);
+  }
+
+}
+
 /*********************************************
 Function to handle when user click button
 **********************************************/
@@ -179,9 +190,6 @@ const handlePostback = (sender_psid, received_postback) => {
       break;
     case "cs-check":
       csCheck(sender_psid);
-      break;
-    case "cs-ingre-for-three":
-      csIngreForThree(sender_psid);
       break;
     default:
       defaultReply(sender_psid);
