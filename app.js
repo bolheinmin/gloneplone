@@ -389,6 +389,11 @@ const searchByCategory = (sender_psid) => {
       },
       {
         "content_type": "text",
+        "title": "Pork",
+        "payload": "pork"
+      },
+      {
+        "content_type": "text",
         "title": "Beef",
         "payload": "pl-beef"
       },
