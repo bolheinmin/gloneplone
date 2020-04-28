@@ -142,6 +142,15 @@ Function to Handle when user send quick reply message
 function handleQuickReply(sender_psid, received_message) {
 
   switch (received_message) {
+    case "chicken":
+      chicken(sender_psid);
+      break;
+    case "pork":
+      pork(sender_psid);
+      break;
+    case "sea-food":
+      seafood(sender_psid);
+      break;
     case "cs-ingre-for-three":
       csIngreForThree(sender_psid);
       break;
@@ -166,6 +175,7 @@ const handlePostback = (sender_psid, received_postback) => {
   switch (payload) {
     case "get_started":
       greetUser(sender_psid);
+      break;
     case "search-meals":
       searchMeals(sender_psid);
       break;
