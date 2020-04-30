@@ -151,6 +151,9 @@ function handleQuickReply(sender_psid, received_message) {
     case "fish":
       fish(sender_psid);
       break;
+    case "beef":
+      beef(sender_psid);
+      break;
     case "sea-food":
       seafood(sender_psid);
       break;
@@ -408,18 +411,13 @@ async function greetUser(sender_psid) {
 
 /* FUNCTION TO SEARCH MEALS */
 const searchMeals = (sender_psid) => {
-  let response1 = {
-    "text": "Thanks for your interest in GlonePlone's Meal Delivery service!"
-  };
-  let response2 = {
-    "text": "We deliver to Naypyitaw Pyinmana, Lwe"
-  };
-  let response3 = {
+  let response;
+  response = {
     "attachment": {
       "type": "template",
       "payload": {
         "template_type": "button",
-        "text": "What do you want to eat?",
+        "text": "“ကြက်သား ဝက်သား ငါး,…” စသည့်အကြောင်းအရာများအားဖြင့် ရှာဖွေနိုင်ပါတယ်။ \n\n ယနေ့ပြုလုပ်မယ့် ပွဲတွေအကြောင်းနှင့် လတ်တလော လူစိတ်ဝင်စားမှုများသောပွဲများလဲအကြောင်းသိချင်ပါသလား။ \n\n အောက်က Button လေးတွေကို နှိပ်ပြီး ရှာဖွေနိုင်ပါတယ်နော်။",
         "buttons": [{
             "type": "postback",
             "title": "Today Meals",
@@ -439,18 +437,14 @@ const searchMeals = (sender_psid) => {
       }
     }
   };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2).then(() => {
-      return callSend(sender_psid, response3);
-    });
-  });
+  callSend(sender_psid, response);
 }
 
 /* FUNCTION TO SEARCH BY CATEGORY */
 const searchByCategory = (sender_psid) => {
   let response;
   response = {
-    "text": `You can choose what you want to eat.`,
+    "text": "Categories တခုချင်းစီကို နှိပ်ပြီး ရှာလို့ရပါတယ်။",
     "quick_replies": [{
         "content_type": "text",
         "title": "Chicken",
@@ -1832,6 +1826,40 @@ const fishTwoHowTo = (sender_psid) => {
         }]
       }
     }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/* FUNCTION TO BEEF */
+const beef = (sender_psid) => {
+  let response1 = {
+    "text": "ဝမ်းနည်းပါတယ်ခင်ဗျ။ လူကြီးမင်းရှာသော Category Beef အတွက် Meal ရှာဖွေလို့မရပါ။"
+  };
+  let response2 = {
+    "text": "တခြား Categories တွေနဲ့ ရှာကြည့်ပါလား။",
+    "quick_replies": [{
+        "content_type": "text",
+        "title": "Chicken",
+        "payload": "chicken"
+      },
+      {
+        "content_type": "text",
+        "title": "Pork",
+        "payload": "pork"
+      },
+      {
+        "content_type": "text",
+        "title": "Fish",
+        "payload": "fish"
+      },
+      {
+        "content_type": "text",
+        "title": "Sea Food",
+        "payload": "sea-food"
+      }
+    ]
   };
   callSend(sender_psid, response1).then(() => {
     return callSend(sender_psid, response2);
