@@ -124,8 +124,6 @@ function handleMessage(sender_psid, received_message) {
   // Checks if the message contains text
   if (received_message.text === 'Hi') {
     greetUser(sender_psid);
-  } else if (received_message.text === 'add book') {
-    addBooks(sender_psid);
   } else if (received_message.text === 'Lunch') {
     lunch(sender_psid);
   } else if (received_message.text === 'Chicken') {
@@ -347,63 +345,6 @@ async function callSend(sender_psid, response) {
   let send = await callSendAPI(sender_psid, response);
   return 1;
 }
-
-const addBooks = (sender_psid) => {
-  let book1 = {
-    title: "Gone with the Wind",
-    author: "Margaret Mitchell",
-    description: "Gone with the Wind is a novel by American writer Margaret Mitchell, first published in 1936. The story is set in Clayton County and Atlanta, both in Georgia, during the American Civil War and Reconstruction Era",
-    publisher: "Macmillan Inc.",
-    year: 1936,
-    genre: ['Historical Fiction', 'Novel'],
-
-  }
-
-  let book2 = {
-    title: "Kane and Abel",
-    author: "Jeffrey Archer",
-    description: "Kane and Abel is a 1979 novel by British author Jeffrey Archer. Released in the United Kingdom in 1979 and in the United States in February 1980, the book was an international success. It reached No. 1 on the New York Times best-seller list",
-    publisher: "Hodder & Stoughton",
-    year: 1979,
-    genre: ['Fiction', 'Novel'],
-
-  }
-
-  let book3 = {
-    title: "Roots",
-    author: "Alex Haley",
-    description: "Roots: The Saga of an American Family is a 1976 novel written by Alex Haley. It tells the story of Kunta Kinte, an 18th-century African, captured as an adolescent, sold into slavery in Africa, transported to North America; following his life and the lives of his descendants in the United States down to Haley",
-    publisher: "Doubleday",
-    year: 1976,
-    genre: ['Novel', 'Biography', 'Fictional Autobiography'],
-
-  }
-
-  db.collection('Books').add(
-    book1
-  ).then(success => {
-    console.log('BOOK ADDED');
-  }).catch(error => {
-    console.log(error);
-  });
-
-  db.collection('Books').add(
-    book2
-  ).then(success => {
-    console.log('BOOK ADDED');
-  }).catch(error => {
-    console.log(error);
-  });
-
-  db.collection('Books').add(
-    book3
-  ).then(success => {
-    console.log('BOOK ADDED');
-  }).catch(error => {
-    console.log(error);
-  });
-}
-
 
 /* FUNCTION TO GETUSERPROFILE */
 const getUserProfile = (sender_psid) => {
