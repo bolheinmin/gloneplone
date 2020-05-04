@@ -157,43 +157,6 @@ function handleQuickReply(sender_psid, received_message) {
     case "sea-food":
       seafood(sender_psid);
       break;
-      // chicken
-    case "ch-one-for-three":
-      chOneForThree(sender_psid);
-      break;
-    case "ch-two-for-three":
-      chTwoForThree(sender_psid);
-      break;
-    case "ch-three-for-three":
-      chThreeForThree(sender_psid);
-      break;
-      // pork
-    case "pork-one-for-three":
-      porkOneForThree(sender_psid);
-      break;
-    case "pork-two-for-three":
-      porkTwoForThree(sender_psid);
-      break;
-    case "pork-three-for-three":
-      porkThreeForThree(sender_psid);
-      break;
-      // fish
-    case "fish-one-for-three":
-      fishOneForThree(sender_psid);
-      break;
-    case "fish-two-for-three":
-      fishTwoForThree(sender_psid);
-      break;
-      // seafood
-    case "sf-one-for-three":
-      sfOneForThree(sender_psid);
-      break;
-    case "sf-two-for-three":
-      sfTwoForThree(sender_psid);
-      break;
-    case "off":
-      showQuickReplyOff(sender_psid);
-      break;
     default:
       defaultReply(sender_psid);
   }
@@ -226,14 +189,11 @@ const handlePostback = (sender_psid, received_postback) => {
     case "ch-three-ingre":
       chThreeIngre(sender_psid);
       break;
-    case "ch-one-check":
-      chOneCheck(sender_psid);
+    case "ch-four-ingre":
+      chFourIngre(sender_psid);
       break;
-    case "ch-two-check":
-      chTwoCheck(sender_psid);
-      break;
-    case "ch-three-check":
-      chThreeCheck(sender_psid);
+    case "ch-five-ingre":
+      chFiveIngre(sender_psid);
       break;
     case "ch-one-how-to":
       chOneHowTo(sender_psid);
@@ -243,6 +203,12 @@ const handlePostback = (sender_psid, received_postback) => {
       break;
     case "ch-three-how-to":
       chThreeHowTo(sender_psid);
+      break;
+    case "ch-four-how-to":
+      chFourHowTo(sender_psid);
+      break;
+    case "ch-five-how-to":
+      chFiveHowTo(sender_psid);
       break;
       // pork
     case "pork-one-ingre":
@@ -254,14 +220,11 @@ const handlePostback = (sender_psid, received_postback) => {
     case "pork-three-ingre":
       porkThreeIngre(sender_psid);
       break;
-    case "pork-one-check":
-      porkOneCheck(sender_psid);
+    case "pork-four-ingre":
+      porkFourIngre(sender_psid);
       break;
-    case "pork-two-check":
-      porkTwoCheck(sender_psid);
-      break;
-    case "pork-three-check":
-      porkThreeCheck(sender_psid);
+    case "pork-five-ingre":
+      porkFiveIngre(sender_psid);
       break;
     case "pork-one-how-to":
       porkOneHowTo(sender_psid);
@@ -272,6 +235,12 @@ const handlePostback = (sender_psid, received_postback) => {
     case "pork-three-how-to":
       porkThreeHowTo(sender_psid);
       break;
+    case "pork-four-how-to":
+      porkFourHowTo(sender_psid);
+      break;
+    case "pork-five-how-to":
+      porkFiveHowTo(sender_psid);
+      break;
       // fish
     case "fish-one-ingre":
       fishOneIngre(sender_psid);
@@ -279,11 +248,8 @@ const handlePostback = (sender_psid, received_postback) => {
     case "fish-two-ingre":
       fishTwoIngre(sender_psid);
       break;
-    case "fish-one-check":
-      fishOneCheck(sender_psid);
-      break;
-    case "fish-two-check":
-      fishTwoCheck(sender_psid);
+    case "fish-three-ingre":
+      fishThreeIngre(sender_psid);
       break;
     case "fish-one-how-to":
       fishOneHowTo(sender_psid);
@@ -291,18 +257,15 @@ const handlePostback = (sender_psid, received_postback) => {
     case "fish-two-how-to":
       fishTwoHowTo(sender_psid);
       break;
+    case "fish-three-how-to":
+      fishThreeHowTo(sender_psid);
+      break;
       // seafood
     case "sf-one-ingre":
       sfOneIngre(sender_psid);
       break;
     case "sf-two-ingre":
       sfTwoIngre(sender_psid);
-      break;
-    case "sf-one-check":
-      sfOneCheck(sender_psid);
-      break;
-    case "sf-two-check":
-      sfTwoCheck(sender_psid);
       break;
     case "sf-one-how-to":
       sfOneHowTo(sender_psid);
@@ -547,6 +510,50 @@ const chicken = (sender_psid) => {
                 "title": "Shop Now"
               }
             ]
+          },
+          {
+            "title": "ကြက်​သားနှင့်ပိန္နဲသီးဆီပြန်",
+            "image_url": "https://petersfancybrownhats.com/company_image.png",
+            "subtitle": "ဒီတစ်ခါ နွေရာသီပူပူမှာခံတွင်းလိုက်စေမယ့်ဟင်းလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
+            "buttons": [{
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "ch-four-ingre"
+              },
+              {
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "ch-four-how-to"
+              },
+
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
+          },
+          {
+            "title": "ရှမ်းအရည်ဖျော်",
+            "image_url": "https://petersfancybrownhats.com/company_image.png",
+            "subtitle": "ရေစိမ်ခေါက်ဆွဲ(ဆန်ဖွယ်)သို့မဟုတ် ဆန်စီးနဲ့လုပ်စားနိူင်ပါတယ်။",
+            "buttons": [{
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "ch-five-ingre"
+              },
+              {
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "ch-five-how-to"
+              },
+
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
           }
         ]
       }
@@ -569,94 +576,6 @@ const chOneIngre = (sender_psid) => {
         "template_type": "button",
         "text": "What do you want to eat?",
         "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "ch-one-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "ch-one-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const chOneCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "ch-one-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const chOneForThree = (sender_psid) => {
-  let response1 = {
-    "text": "ဗမာကြက် = ၁၅ဝ ကျပ်သား \n\n ချဉ်စော်ခါးသီ = ၃ ခြမ်း \n\n ချင်းကြီးကြီး = ၃တက် \n\n ကြက်သွန်ဖြူ = ၁၅မွှာ \n\n ငရုတ်သီးစိမ်း = ၉တောင့် \n\n ကြွက်နားရွယ်မှို = အနည်းငယ် \n\n ရှမ်းနံနံ+ကြက်သွန်မြိတ် = အနည်းငယ်စီ"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "ch-one-check"
-          },
-          {
             "type": "postback",
             "title": "How to cook",
             "payload": "ch-one-how-to"
@@ -713,94 +632,6 @@ const chTwoIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "ch-two-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "ch-two-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const chTwoCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "ch-two-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const chTwoForThree = (sender_psid) => {
-  let response1 = {
-    "text": "ကြက်ဥ = ၃လုံး \n\n ကြက်သွန်နီ = ၂လုံး \n\n ကြက်သွန်ဖြူ = ၅တက် \n\n ငရုတ်သီးကြမ်းဖတ် = ၂ဇွန်း \n\n ငါးငံပြာရည် = ၁ဇွန်း \n\n အရသာမှုန့် = ၁ဇွန်း"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "ch-two-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "ch-two-how-to"
           },
@@ -856,94 +687,6 @@ const chThreeIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "ch-three-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "ch-three-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const chThreeCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "ch-three-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const chThreeForThree = (sender_psid) => {
-  let response1 = {
-    "text": "အရိုးထုတ်ပြီးကြက်ရင်ပုံသား  = ၁ခြမ်း \n\n ငရုတ်သီးစိမ်းနီ = ၁၀တောင့် \n\n ကြက်သွန်ဖြူ = ၇တက် \n\n ကြက်သွန်နီ = ၁ခြမ်း \n\n ပဲတောင့်ရှည် = ၁စည်း \n\n ကဖောင်ပင်စိမ်း = ၅ခက် \n\n ABC ပဲငံပြာရည်အပျစ် = ၁ဇွန်း \n\n ငါးငံပြာရည် = ၁ဇွန်း \n\n သကြား၊ အရသာမှုန့် = ၁ဇွန်း"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "ch-three-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "ch-three-how-to"
           },
@@ -964,6 +707,116 @@ const chThreeForThree = (sender_psid) => {
 const chThreeHowTo = (sender_psid) => {
   let response1 = {
     "text": "၁။ ကြက်သားကို ခပ်​ကြမ်းကြမ်းလေးနုတ်နုတ်စဥ်းကာအရသာနယ်နှပ်ထားပါ။ \n\n ၂။ ကြက်သွန်ဖြူ ၊ ငရုတ်သီးစိမ်းတောင့်နီကိုရောပြီး ခပ်ကြမ်းကြမ်းလေးထောင်းပါ။ \n\n ၃။ ပင်စိမ်းရွက်လေးတွေကိုအရွက်ခြွေထားပါ။ \n\n ၄။ ဒယ်အိုးမှာ ဆီအနည်းငယ်ကိုအပူပေးပြီးကြက်သွန်နီကိုဆီသပ်ပါ။ \n\n ၅။ နွမ်းပြီးမွှေးလာလျှင်ရောထောင်းထားတဲ့ကြက်သွန်ဖြူ ၊ ငရုတ်သီးအရောကိုဆီသပ်ပါ။\n\n ၆။ မွှေးပြီး မွှန်လာလျှင်အရသာနယ်ထားတဲ့ကြက်သားတွေထည့်ပါ။ \n\n ၇။ ငါးငံပြာရည် ၊ ခရုဆီ ၊ABC ပဲငံပြာရည် အပျစ်၊ သကြား၊ အရသာမှုန့် တို့ဖြင့်အရသာဖြည့်ပါ။ \n\n ၈။ စိမ့်ထွက်ခါတဲ့အရည်တွေကုန်လာပြီဆို ဆီပြန်လာပါလိမ့်မယ်(အထက်ပါအဆင့်မှာမီးရှိန်ပြင်းဖို့လိုပါမယ်) \n\n ၉။ ဆီပြန်လာပြီဆို ခပ်စောင်းလှီးထားတဲ့ပဲတောင့်ရှည်ပင်စိမ်းရွက်အုပ် ၊ ငရုတ်ကောင်းလေးဖြူးပြီး တည်ခင်းမယ့်ပန်းကန်ထဲပြောင်းထည့်ပါ။ \n\n ၁၀။ ချို ၊စပ် မွှေးပြီးအရသာရှိတဲ့ကြက်သားပင်စိမ်းကြော်လေးရပါပြီ။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/**************************
+Functions for Chicken four
+***************************/
+const chFourIngre = (sender_psid) => {
+  let response1 = {
+    "text": "ကြက်သား = တစ်ခြမ်း(၃၀ကျပ်သား) \n\n ပိန္နဲ သီးစိမ်းနုနု = ၃၀ကျပ်သား \n\n ကြက်​သွန်​နီ = ၂လုံး \n\n ကြက်​သွန်​ဖြူ = ၃တက်​ \n\n ချင်းကြီးကြီး = ၁တက်​"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "ch-four-how-to"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const chFourHowTo = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ကြက်သားတွေကိုရေ​ဆေးသန့်​စင်​ပြီးအ​နေ​တော်​အတုံး​လေးများတုံးပါ။ \n\n ၂။ ချင်းနှင့်​ကြက်​သွန်​ဖြူ ကိုညှက်​နေ​အောင်​ရော​ထောင်းပါ။ကြက်​သွန်​နီကို​တော့နုပ်​နုပ်​စဉ်းပြီးလှီးပါ။ \n\n ၃။ တုံးထားတဲ့ကြက်​သားထဲကိုချင်း+ကြက်​သွန်​ဖြူ​ထောင်းအရည်​ကိုညှစ်​ချပြီး ဆား၊ဟင်းခတ်​မှုန့်​၊ကြက်​သားမှုန့်​၊ နနွင်းမှုန့်​နှင့်​အ​ရောင်​တင်​မှုန့်​အနည်းငယ်​စီထည့်​နယ်​ကာနှပ်​ထားပါ။ \n\n ၄။ ပိန္နဲသီးအစိမ်းနုနုကိုအခွံခွာပြီးအတုံးငယ်များတုံးကာ ဆားပါသောရေအေးမှာစိမ်ထားပါ။ \n\n ၅။ အရသာနှပ်​ထားချိန်​(၁၅)မိနစ်​လောက်​ရှိပြီဆိုဒယ်​အိုးတစ်​လုံးမှာဆီအနည်းငယ်​ကိုအပူ​ပေးပြီးကြက်သွန်နီတွေကိုထည့်ကြော်ပါ။ \n\n ၆။ ကြက်​သွန်​နီ​တွေ​ရွှေ​ရောင်​သန်းလာပြီဆိုရင်​အရသာနှပ်​ထားတဲ့ကြက်​သားတွေထည့်​ပါ။ \n\n ၇။ ရေစိမ်ထားတဲ့ပိန္နဲသီးအစိမ်းနုနုတွေထည့်ပါ။သမသွား​အောင်​ဖြေးညင်းစွာ​မွှေ​ပေးပြီးအဖုံးအုပ်​ထားပါ။ \n\n ၈။ မီးရှိန်လျှော့ချပြီး မကြေမွှစေရန် နှပ်ချက်ချက်နည်းကိုအသုံးပြုပါ။ \n\n ၉။ အနှစ်​ကျပြီးဆီပြန်​လာလျှင်​အဖုံးဖွင့်​ပြီး​မွှေ​ပေးပါ။ \n\n ၁၀။ ရေအနည်းငယ်ဖြည့်စွက်ပြီး ဆီပြန်လာလျှင်ဖိုပေါ်မှချပါ။ \n\n မှတ်ချက် ။ ဝက်သားသုံးထပ်သားနှင့်နှပ်ရင်ပိုကောင်းပေမယ့် လူအများအားလုံးစားနိူင်ဖို့ ကြက်သားကိုရွေးချယ်ထားပါတယ်။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/**************************
+Functions for Chicken five
+***************************/
+const chFiveIngre = (sender_psid) => {
+  let response1 = {
+    "text": "ရှမ်းခေါက်ဆွဲ = ၁ပိဿာ \n\n ကြက်ရိုး = ၅၀ကျပ်သား \n\n ကြက်ရင်ပုံသား = ၂၅ကျပ်သား \n\n ကြက်သွန်နီ = ၃လုံး \n\n ကြက်သွန်ဖြူ = ၁၀ မွှာခန့် \n\n ချင်းကြီးကြီး = ၁တက် \n\n ကြက်သွန်မြိတ်+နံနံပင် \n\n ABC ပဲငံပြာရည်အပျစ် \n\n ABCcပဲငံပြာရည်အကျဲ"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "ch-five-how-to"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const chFiveHowTo = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ပထမဆုံးကြက်ရိုးတွေကိုချင်းတက်ရဲ့တဝက်လောက်ဓားပြားရိုက်ပြီးဟင်းရည်ကြည်ရအောင်ပြုတ်ပါ။ \n\n ၂။ ကြက်ရင်ပုံသားကိုအတုံးငယ်လေးတွေတုံးပြီးချင်းအရည်ညှစ်ထည့်ကာအရသာနယ်ပါ။ \n\n ၃။ ကြက်သွန်နီကိုငရုတ်စိမ်းမှုန့်နှင့်ဆီသပ်ပြီး မွှေးလာလျှင်ကြက်သားတုံးလေးတွေထည့်ပါ။သကြား၊အရသာမှုန့်၊ ABCပဲငံပြာရည်အပျစ်၊ အကျဲတို့ဖြင့်အရသာဖြည့်စွက်ပါ။ \n\n ၄။ ကြက်သွန်ဖြူကိုအရောင်မပါပဲ ဆီချက် ပြုလုပ်ပါ။ \n\n ၅။ ငရုတ်သီးလှော်မှုန့်နှင့်နှမ်းကိုရောပြီးဆီသပ်ပါ။(အစပ်နှင့်မွှေးရနံ့အတွက်) \n\n ၆။ ထပ်ပြီးမွှေးလိုလျှင်ဝှားကျောင်း(မက်ခါသီး)နှင့်တရုတ်မဆလာအမှုန့်(ရှောက်ကော၊ပါ့ကော)ကိုဆီပူလောင်းပြီးဆီမွှေးပြုလုပ်ထားပါ။ \n\n ၇။ ခေါက်ဆွဲပြင်တော့မယ်ဆိုရင် အရွက်စိမ်းတစ်မျိုးမျိုး(ပဲရွက်၊မုန်ညှင်းစိမ်း)နှင့်တစ်ပွဲစာခေါက်ဆွဲကိုရေနွေးဆူဆူမှာဇကာလေးခံပြီးပြုတ်ပါ။ \n\n ၈။ ပန်းကန်လုံးတစ်ခုထဲမှာခေါက်ဆွဲကိုထည့်ပြီးအရသာမှုန့်၊သကြား၊ ABC ပဲငံပြာရည်အကျဲဖြင့်အရသာထည့်ဖြည့်ပါ။ \n\n ၉။ ကြက်သားဟင်းအနှစ် ၁ဇွန်း၊ ကြက်သွန်ဖြူဆီချက်၊ ငရုတ်ကောင်းမှုန့်၊ကြက်သွန်မြိတ်၊နံနံပင်ထည့်ကာ ကြက်ပြုတ်ရည်ပူပူလေးလောင်းထည့်ပါ။ \n\n ငရုတ်သီး+နှမ်းဆီချက် ၊ ရှမ်းချဥ်(မုန်ညှင်းချဥ်)၊ ဂေါ်ဖီချဥ်တို့ဖြင့်တွဲဖက်သုံးဆောင်ပါ။"
   };
   let response2 = {
     "attachment": {
@@ -1052,7 +905,47 @@ const pork = (sender_psid) => {
                 "title": "Shop Now"
               }
             ]
-          }
+          },
+          {
+            "title": "သုံးထပ်သားနှင့်ဘဲဥအချိုချက်",
+            "image_url": "https://petersfancybrownhats.com/company_image.png",
+            "subtitle": "ဒီတစ်ခါ နွေရာသီပူပူမှာခံတွင်းလိုက်စေမယ့်ဟင်းလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
+            "buttons": [{
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "pork-four-ingre"
+              }, {
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "pork-four-how-to"
+              },
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
+          },
+          {
+            "title": "ဝက်နံရိုးနုကြော်",
+            "image_url": "https://petersfancybrownhats.com/company_image.png",
+            "subtitle": "ဒီတစ်ခါလွယ်ကူရိုးရှင်းပြီးအမြန်ချက်လို့ရတဲ့ဟင်းချက်နည်းလေးတစ်ခုဝေမျှပါ့မယ်။",
+            "buttons": [{
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "pork-five-ingre"
+              }, {
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "pork-five-how-to"
+              },
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
+          },
         ]
       }
     }
@@ -1074,94 +967,6 @@ const porkOneIngre = (sender_psid) => {
         "template_type": "button",
         "text": "What do you want to eat?",
         "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "pork-one-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "pork-one-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const porkOneCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "pork-one-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const porkOneForThree = (sender_psid) => {
-  let response1 = {
-    "text": "သုံးထပ်သား = ၉၀ကျပ်သား \n\n ချင်း = ၆တက် \n\n ကြက်သွန်နီဥကြီး = ၃လုံး \n\n ကြက်သွန်နီဥသေး = ၃၀လုံး \n\n ကြက်သွန်ဖြူ = ၁၅တက် \n\n နာနတ်ပွင့် = ၆ပွင့် \n\n ဟင်းချက်ဝိုင် = ၆ဇွန်း \n\n သကြား = ၃ ဇွန်း \n\n ABCပဲငံပြာရည်အကျဲ = ၆ဇွန်း \n\n ABCပဲငံပြာရည်အပျစ် = ၃ဇွန်း \n\n"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "pork-one-check"
-          },
-          {
             "type": "postback",
             "title": "How to cook",
             "payload": "pork-one-how-to"
@@ -1218,94 +1023,6 @@ const porkTwoIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "pork-two-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "pork-two-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const porkTwoCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "pork-two-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const porkTwoForThree = (sender_psid) => {
-  let response1 = {
-    "text": "ဝက်လိုင်းသား = ၆၀ကျပ်သား \n\n ကြက်သွန်နီ = ၆လုံး \n\n ခရမ်းချဉ်သီး = ၆လုံး \n\n ချင်းသေးသေး = ၃တက် \n\n ရွှေပဲသီး = ၃၀တောင့်ခန့် \n\n ငရုတ်ပွခြောက်ရှည် = ၁၅တောင့် \n\n ကြက်သွန်မြိတ် = ၉ပင် \n\n ABC ပဲငံပြာရည်အပျစ် \n\n ABC ပဲငံပြာရည်အကျဲ"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "pork-two-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "pork-two-how-to"
           },
@@ -1361,94 +1078,6 @@ const porkThreeIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "pork-three-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "pork-three-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const porkThreeCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "pork-three-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const porkThreeForThree = (sender_psid) => {
-  let response1 = {
-    "text": "ဝက်လိုင်းသား = ၆၀ကျပ်သား \n\n ကြက်သွန်နီ = ၆လုံး \n\n ခရမ်းချဉ်သီး = ၆လုံး \n\n ချင်းသေးသေး = ၃တက် \n\n ငရုတ်သီးခွဲကြမ်း = ၃ဇွန်း \n\n ဗီနီဂါ = ၃ဇွန်း \n\n ငရုတ်ဆော့စ်အပျစ် = ၆ဇွန်း \n\n သံပုရာသီး = ၃စိတ် \n\n ကြက်သွန်မြိတ် = ၉ပင် \n\n ABC ပဲငံပြာရည်အပျစ် \n\n ABC ပဲငံပြာရည်အကျဲ"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "pork-three-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "pork-three-how-to"
           },
@@ -1469,6 +1098,116 @@ const porkThreeForThree = (sender_psid) => {
 const porkThreeHowTo = (sender_psid) => {
   let response1 = {
     "text": "၁။ ပထမဆုံးအသားကိုမိမိစိတ်ကြိုက်အတုံးငယ်(သို့)ခပ်ပါးပါးလှီးကာ အရသာမှုန့်၊ ABC ပဲငံပြာရည်အပျစ်၊ အကျဲတို့ဖြင့်အရသာနယ်ကာ (၅)မိနစ်ခန့်နှပ်ထားပါ။ \n\n ၂။ ကြက်သွန်နီကိုလေးစိတ်ခွဲပြီးအလွှာလေးတွေခွာထားပါ။ခရမ်းချဥ်သီးကိုလေးစိတ်ခွဲလှီးကာအူတိုင်နှင့်အစေ့တွေထုတ်ပါ။ \n\n ၃။ ချင်းကိုအမျှင်လှီးပြီး ငရုတ်ခွဲကြမ်းမှုန့် တစ်ဇွန်းပြင်ဆင်ထားပါ။ \n\n ၄။ ကြက်သွန်မြိတ်ကိုလက်တဆစ်ခန့်လှီးပါ။ \n\n ၅။ ဒယ်အိုးတစ်လုံးမှာဆီအနည်းငယ်ကိုအပူပေးပြီး ကြက်သွန်နီ၊  ခရမ်းချဥ်သီးတွေကိုတစ်ခုချင်းစီထည့်ကြော်ပြီးဆီစစ်ထားပါ။ \n\n ၆။ လက်ကျန်ဆီမှာချင်းကိုဆီသပ်ပြီးမွှေးလာပြီဆိုအရသာနယ်ထားတဲ့အသားတွေထည့်ကြော်ပါ။ \n\n ၇။ ငရုတ်ခွဲကြမ်းမှုန့်၊ ဗီနီဂါ ၊ ငရုတ်ဆော့စ် အရသာမှုန့် ၊ခရုဆီ၊ သကြား၊ ABC ပဲငံပြာရည်အပျစ်၊ အကျဲတို့ဖြင့်အရသာဖြည့်စွက်ပါ။ \n\n ၈။ ကြော်ယူဆီစစ်ထားတဲ့ ကြက်သွန်နီ၊ ခရမ်းချဉ်သီး ၊ တွေထည့်ပြီး မွှေပေးပါ။ \n\n ၉။ နောက်ဆုံးမှာ ကြက်သွန်မြိတ်၊ ငရုတ်ကောင်းလေးဖြူးပေးပါ။ \n\n မှတ်ချက်။ ဒီဟင်းပွဲဟာမီးရှိန်ပြင်းပြင်းဖြင့်အမြန်ချက်ပြုတ်ကာပူပူနွေးနွေးသုံးဆောင်ရတဲ့ဟင်းပွဲဖြစ်ပါတယ်။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/***********************
+Functions for Pork four
+************************/
+const porkFourIngre = (sender_psid) => {
+  let response1 = {
+    "text": "သုံးထပ်သား = ၂၀ကျပ်သား \n\n ဘဲဥ = ၃လုံး \n\n ပဲပြား = ၂တုံး \n\n မုန်လာဥဖြူသေး = ၂လုံး \n\n ငရုတ်ကောင်းစေ့ = ဇွန်းဝက် \n\n ကြက်သွန်ဖြူ = ၅မွှာ \n\n ချင်းသေးသေး = ၁တက် \n\n နံနံပင်အမြစ် = ၁၀ခု \n\n နာနတ်ပွင့် = ၁ပွင့် \n\n သစ်ကြပိုးခေါက် = ၁ခု \n\n သကြား = ၁ဇွန်း \n\n ABC ပဲငံပြာရည်အပျစ် = ၁ဇွန်း \n\n ABCပဲငံပြာရည်အကျဲ = ၂ဇွန်း \n\n ဆား = အနည်းငယ်"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "pork-four-how-to"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const porkFourHowTo = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ပထမဦးဆုံးဘဲဥကိုကျက်အောင်ပြုတ်ပြီးရေအေးစိမ်ကာအခွံခွာထားပါ။ \n\n ၂။ သုံးထပ်သားကိုအနေတော်အတုံးငယ်များတုံးပြီးABC ပဲငံပြာရည်အပျစ်၊ ABC ပဲငံပြာရည်အ​ကြည်တို့ဖြင့်အရသာနယ်ကာ(၁၀)မိနစ်ခန့် နှပ်ထားပါ။ \n\n ၃။ မုန်လာဥဖြူကိုအခွံခွာပြီးတစ်လက်မအရွယ်ခပ်ထူထူ၊ခပ်စောင်းစောင်းလှီးထားပြီးဟင်းရည်ကြည်ပုံစံပြုတ်ထားပါ။ \n\n ၄။ ငရုတ်ကောင်းစေ့ ၊ ကြက်သွန်ဖြူ ၊ချင်း၊ နံနံပင်အမြစ်တို့ကိုခပ်ကြမ်းကြမ်းထောင်းပါ။ \n\n ၅။ နာနတ်ပွင့်၊သစ်ကြပိုးခေါက်တို့ကိုမွှေးရုံမီးကင်ထားပါ။ \n\n ၆။ ဒယ်အိုးတစ်လုံးမှာဆီများများလေးကိုအပူပေးပြီးပဲပြားကိုတြိဂံပုံနှစ်ပိုင်း ပိုင်းပြီးကြော်ယူကာဆီဆစ်ထားပါ။ \n\n ၇။ ပိုလျှံနေသောဆီကိုစစ်ထုတ်ပြီးလက်ကျန်ဆီအနည်းငယ်မှာ သကြားကိုဦးစွာထည့်ပါ။ \n\n ၈။ သကြားပျော်ပြီးရွှေညိုရောင်လေးသမ်းလာပြီဆိုလျှင်ရောထောင်းထားသောကြက်သွန်ဖြူ၊ငရုတ်ကောင်းအရောကိုဆီသပ်ပါ။ \n\n ၉။ မွှေးလာလျှင်အရသာနယ်ထားတဲ့ဝက်သားသုံးထပ်သားတွေထည့်ပြီးမွှေပေးပါ။ \n\n ၁၀။ သုံးထပ်သားတွေအပေါ်ယံကြောတင်းကာမွှေးသွားပြီဆိုမှအခွံခွာထားတဲ့ဘဲဥ၊ ကြော်ထားတဲ့ပဲပြားထည့်ကာ မုန်လာဥဟင်းရည်ကိုအဖတ်မပါစေပဲအရည်ကြည်သာစစ်ထည့်ပါ။ \n\n ၁၁။ (၅)မိနစ်ခန့်ပြုတ်ပြီးလျှင်ဆီစစ်ဇကာထဲသို့လောင်းချပြီးထောင်းထားသောကြက်သွန်ဖြူ၊ချင်း၊ ငရုတ်ကောင်း၊နံနံပင်အမြစ်ဖတ်များကိုဖယ်ထုတ်ပါ။ \n\n ၁၂။ မီးဖုတ်ထားသော နာနတ်ပွင့်၊သစ်ကြပိုးခေါက်တို့ဖြည့်စွက်ပြီးလက်ကျန်မုန်လာဥဟင်းရည်အားလုံးလောင်းထည့်ကာမီးရှိန်အေးအေးဖြင့်(၁၅) မိနှစ်ခန့် နှပ်ချက်လေးချက်ပေးပါ။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/***********************
+Functions for Pork five
+************************/
+const porkFiveIngre = (sender_psid) => {
+  let response1 = {
+    "text": "ဝက်နံရိုးနု = ၃၀ကျပ်သား \n\n ချင်းကြီးကြီး = ၁ တက် \n\n ABC ပဲငံပြာရည်အပျစ် = ၁ ဇွန်း \n\n ABCပဲငံပြာရည်အကြည် = ၂ဇွန်း \n\n အရသာမှုန့် \n\n သကြား \n\n ဟင်းချက်ဆန်အရက်"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "pork-five-how-to"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const porkFiveHowTo = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ဝက်နံရိုးနုလေးတွေကိုအရွယ်တော်တုံးကာသန့်စင်ပြီး ချင်းထောင်းအရည်၊ ဆား၊ပဲငံပြာရည်အကြည်၊ ပဲငံပြာရည်အပျစ်၊သကြား၊ ဟင်းချက်ဆန်အရက်တို့ဖြင့်အရသာနယ်ကာ(၁၀)မိနစ်ခန့်နှပ်ထားပါ။ \n\n ၂။ အရသာနယ်ချိန်ပြည့်ပြီဆိုလျှင်ရေမြှုပ်ရုံထည့်ပြီးရေခမ်းအောင်ပြုတ်ပါ။ \n\n ၃။ ရေခမ်းသွားပြီဆိုလျှင်(၁၀)မိနစ်ခန့်အအေးခံထားပါ။ \n\n ၄။ ဒယ်အိုးတစ်လုံးမှာ ဆီကို ကျိုက်ကျိုက်ဆူအပူပေးပြီးဝက်နံရိုးတွေထည့်ကြော်ပါ။ \n\n ၅။ အထက်ပါဖော်ပြချက်များကိုလိုက်နာပါက အပြင်ပိုင်းရွှေညိုရောင်သန်းကြွပ်ရွနေပြီးအတွင်းပိုင်းနူးညံ့အိစက်နေတဲ့ဝက်နံရိုးကြော်နုနုလေးကိုရရှိမှာဖြစ်ပါတယ်။ \n\n ABC ငရုတ်ဆော့စ်(သို့)ဘိတ်ချဥ်လေးဖြင့်တွဲဖက်သုံးဆောင်ပါ။"
   };
   let response2 = {
     "attachment": {
@@ -1538,6 +1277,27 @@ const fish = (sender_psid) => {
                 "title": "Shop Now"
               }
             ]
+          },
+          {
+            "title": "မြန်မာစတိုင်လ်ငါးရံ့သောက်ဆမ်း",
+            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
+            "subtitle": "ငါးပိထောင်းက နူးညံ့အိစက်နေတဲ့အတွက်သရက်သီးစိမ်းလေးနဲ့တို့မလား၊ သခွားသီးလေးနဲ့ကော်ပြီးတို့မလား၊ ထမင်းနဲ့ ဇွိကနဲနယ်စားမလား၊ စားချင်ရာနဲ့သာစားပါ။",
+            "buttons": [{
+                "type": "postback",
+                "title": "View ingredients",
+                "payload": "fish-three-ingre"
+              },
+              {
+                "type": "postback",
+                "title": "How to cook?",
+                "payload": "fish-three-how-to"
+              },
+              {
+                "type": "web_url",
+                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+                "title": "Shop Now"
+              }
+            ]
           }
         ]
       }
@@ -1560,94 +1320,6 @@ const fishOneIngre = (sender_psid) => {
         "template_type": "button",
         "text": "What do you want to eat?",
         "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "fish-one-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "fish-one-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const fishOneCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "fish-one-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const fishOneForThree = (sender_psid) => {
-  let response1 = {
-    "text": "ငါးကြင်းမြီး = ၆ခု \n\n ချင်းကြီးကြီး = ၃တက် \n\n ကြက်သွန်ဖြူ = ၂၁မွှာ \n\n ကြက်သွန်မြိတ် = ၁၅ပင် \n\n ABCပဲငံပြာရည်အကြည် = ၁၅ဇွန်း \n\n ABCပဲငံပြာရည်အပျစ် = ၃ဇွန်း \n\n ခရုဆီ = ၉ဇွန်း \n\n သကြား = ၆ဇွန်း \n\n ဆီမွှေး = ၃ဇွန်း \n\n ဆား၊ အရသာမှုန့် = အနည်းငယ်စီ"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "fish-one-check"
-          },
-          {
             "type": "postback",
             "title": "How to cook",
             "payload": "fish-one-how-to"
@@ -1704,94 +1376,6 @@ const fishTwoIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "fish-two-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "fish-two-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const fishTwoCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "fish-two-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const fishTwoForThree = (sender_psid) => {
-  let response1 = {
-    "text": "ပုစွန်ငါးပိကောင်းကောင်း = ၉ဇွန်း \n\n ပုစွန်ခြောက် = ၃ဇွန်း \n\n ငရုတ်သီးစိမ်း = ၂၀တောင့် \n\n အာဝါးသီး(ကုလားအော်သီး) = ၉တောင့် \n\n သံပုရာသီးကြီးကြီး = ၃လုံး"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "fish-two-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "fish-two-how-to"
           },
@@ -1812,6 +1396,61 @@ const fishTwoForThree = (sender_psid) => {
 const fishTwoHowTo = (sender_psid) => {
   let response1 = {
     "text": "၁။ ပထမဆုံးပုစွန်ခြောက်ကို မီးအေးအေးလေးနဲ့လှော်ပါ။ \n\n ၂။ စတီးပန်ကန်ပြားလေးကိုဆီအနည်းငယ်သုတ်ပြီးငါးပိတွေကို ပြန့်နေအောင်ဖြန့်ပြီးပေါင်းပါ။ \n\n ၃။ ငရုတ်သီးတွေကိုအညှာခြွေပြီးပြုတ်ပါ။ \n\n ၄။ ကျွန်တော်က ဒယ်အိုးနီနဲ့ ပုစွန်ခြောက်လှော်ပြီးငရုတ်သီးပြုတ်ပါတယ်။ ဝါးတူလေး ၄ချောင်းကိုကြက်ခြေခတ်လုပ်ပြီး ငါးပိပန်းကန်ပြားတင်ပြီးပေါင်းပါ။ \n\n ၅။ ငါးပိပေါင်းတဲ့အခါဘအပေါ်ကိုဖောင်းတက်လာပြီး ကွဲထွက်သွားပြီဆို ဖယ်ထုတ်အအေးခံထားပါ။ \n\n ၆။ ငရုတ်သီးကိုတော့ နူးအိနေအောင်ပြုတ်ပါ ။ ရေမကျန်စေရ။အအေးခံထားပါ။ \n\n ၇။ ပုစွန်ခြောက်ကို ဆုံထဲထည့်ပြီး မွှနေအောင်ထောင်းပါ။ \n\n ၈။ အအေးခံထားတဲ့ ငရုတ်သီးစိမ်းပြုတ်တွေထည့်ပြီး ညှက်စေးနေအောင်ထောင်းပါ။ \n\n ၉။ ငါးပိတွေကို ထည့်ပြီး ဇွန်းနဲ့ ကျည်ပွေ့ သုံးပြီးမွှေပေးပါ။ ငါးပိက မွှနေအောင်ပေါင်းထားတဲ့အတွက် ကျည်ပွေ့နဲ့ ဖိထောင်းစရာမလိုပါ။ \n\n ၁၀။ ထိုကဲ့သို့ မွှေနေချိန်အတွင်းဟင်းခတ်မှုန့်နှင့်သံပုရာရည် ညှစ်ထည့်ပြီး နှံ့သွားအောင်မွှေပေးပါ။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/***********************
+Functions for Fish three
+************************/
+const fishThreeIngre = (sender_psid) => {
+  let response1 = {
+    "text": "ငါးရံ့ခုတ်သား = ၂၀ကျပ်သား \n\n မန်ကျည်းသီးစိမ်းအရင့်= ၁၀ကျပ်သား \n\n ကြက်သွန်နီ = ၁လုံး \n\n ကြက်သွန်ဖြူ = ၅တက် \n\n ခရမ်းချဥ်သီး = ၃လုံး \n\n စပါးလင် = ၂ပင် \n\n ကုလားအော်သီး = ၃တောင့် \n\n ငရုတ်သီးစိမ်းတောင့် = ၅တောင့် \n\n ရှမ်းနံနံ+နံနံပင် = အနည်းငယ်စီ"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "fish-three-how-to"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const fishThreeHowTo = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ပထမဆုံးမန်ကျည်းသီးစိမ်းတောင့်ကို ရေသုံးခွက် တစ်ခွက်တင်ပြုတ်ထားပြီးအရည်စစ်ထားပါ။ \n\n ၂။ ငါးရံ့အကွင်းကိုသန့်စင်ပြီးဆား၊ ငံပြာရည်၊အရသာမှုန့်ထည့်ပြီးနည်ထားပါ။ \n\n ၃။ ကြက်သွန်ဖြူ ၊ နီကိုရောပြီးညှက်အောင်ထောင်းထားပါ။ \n\n ၄။ စပါးလင်အဖြူပိုင်းကိုခပ်ထူထူစောင်းစောင်းလေးလှီးပါ။ ရှမ်းနံနံနှင့်နံနံပင်ကိုသင့်တော်သလို လှီးဖြတ်ထားပါ။ \n\n ၅။ ဒယ်အိုးတစ်လုံးမှာဆီအနည်းငယ်ကိုအပူပေးပြီးထောင်းထားတဲ့ကြက်သွန်အရောကိုနနွင်းမှုန့်နှင့်အတူဆီသပ်ပါ။ \n\n ၆။ မွှေးလာလျှင်စပါးလင်တွေထည့်ပြီးအရသာနယ်ထားတဲ့ငါးရံ့ကွင်းတွေထည့်ပါ။ \n\n ၇။ မီးရှိန်လျှော့ပြီးဖြေးညည်းစွာမွှေပေးပါ။ \n\n ၈။ ငါးအသားတွေတင်းပြီးဆိုရင် ငရုတ်သီးအတောင့်လိုက်နှင့် ခရမ်းချဥ်သီးလေးစိတ်ခွဲတွေထည့်ပါ။ \n\n ၉။ အဖုံးခေတ္တအုပ်ထားပေးပါ။အငွေ့ရှိန်ကြောင့်ခရမ်းချဥ်သီးနဲ့ငရုတ်သီးစိမ်းတောင့်တွေအိဆင်းလာပါလိမ့်မယ်။ \n\n ၁၀။ ခရမ်းချဥ်သီးတွေပုံစံမပျက်အိလာပြီဆိုမှ မန်ကျည်းသီးစိမ်းပြုတ်ရည်တစ်ဆနှင့် ရေကြက်သီးနွေး နှစ်ဆလောင်းထည့်ပါ။ \n\n ၁၁။ ငါးငံပြာရည်၊ သကြား၊ အရသာမှုန့်တို့နှင့်အရသာဖြည့်စွက်ပြီးအဖုံးအုပ်ကာ မီးရှိန်အေးအေးဖြင့်ချက်ပါ။ \n\n ၁၂။ နောက်ဆုံးရှမ်းနံနံနှင့် နံနံပင်လေးအုပ်ပြီးဖိုပေါ်မှချပါ။ \n\n အရည်သောက်တော့ ချို ချဥ်မွှေးပြီးထမင်းနဲ့နယ်စားတဲ့အခါ ကုလားအော်သီး၊ ရိုးရိုးငရုတ်သီးစိမ်းတောင့်လေးတွေနဲ့နယ်စားတော့ စပ်ရှိန်းရှိန်းလေးနဲ့ အလွန်စားမြိန်တဲ့သောက်ဆမ်းလေးဟင်းတစ်ခွက်ပါ။"
   };
   let response2 = {
     "attachment": {
@@ -1918,26 +1557,27 @@ const seafood = (sender_psid) => {
             ]
           },
           {
-            "title": "Welcome!",
+            "title": "ပုစွန်နှင့်ပန်းဂေါ်ဖီးစိမ်းကြော်",
             "image_url": "https://petersfancybrownhats.com/company_image.png",
-            "subtitle": "We have the right hat for everyone.",
+            "subtitle": "ဒီတစ်ပါတ်မှာတော့ အရွယ်သုံးပါးနှစ်သက်စေမယ့်ရိုးရှင်းတဲ့ဟင်းလျာလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
             "buttons": [{
                 "type": "postback",
-                "title": "How to cook?",
-                "payload": "how-to-cook"
+                "title": "View ingredients",
+                "payload": "sf-three-ingre"
               },
               {
                 "type": "postback",
-                "title": "View ingredients",
-                "payload": "view-ingre"
+                "title": "How to cook?",
+                "payload": "sf-three-how-to"
               },
+
               {
                 "type": "web_url",
                 "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
                 "title": "Shop Now"
               }
             ]
-          }
+          },
         ]
       }
     }
@@ -1960,96 +1600,8 @@ const sfOneIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "sf-one-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "sf-one-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const sfOneCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "sf-one-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const sfOneForThree = (sender_psid) => {
-  let response1 = {
-    "text": "သုံးထပ်သား = ၉၀ကျပ်သား \n\n ချင်း = ၆တက် \n\n ကြက်သွန်နီဥကြီး = ၃လုံး \n\n ကြက်သွန်နီဥသေး = ၃၀လုံး \n\n ကြက်သွန်ဖြူ = ၁၅တက် \n\n နာနတ်ပွင့် = ၆ပွင့် \n\n ဟင်းချက်ဝိုင် = ၆ဇွန်း \n\n သကြား = ၃ ဇွန်း \n\n ABCပဲငံပြာရည်အကျဲ = ၆ဇွန်း \n\n ABCပဲငံပြာရည်အပျစ် = ၃ဇွန်း \n\n"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "ch-one-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "ch-one-how-to"
           },
           {
             "type": "web_url",
@@ -2103,96 +1655,8 @@ const sfTwoIngre = (sender_psid) => {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Check!",
-            "payload": "sf-two-check"
-          },
-          {
-            "type": "postback",
             "title": "How to cook",
             "payload": "sf-two-how-to"
-          },
-          {
-            "type": "web_url",
-            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-            "title": "Shop Now"
-          }
-        ]
-      }
-    }
-  };
-  callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2);
-  });
-}
-
-const sfTwoCheck = (sender_psid) => {
-  let response;
-  response = {
-    "text": `You can choose what you want to eat.`,
-    "quick_replies": [{
-        "content_type": "text",
-        "title": "3",
-        "payload": "sf-two-for-three"
-      },
-      {
-        "content_type": "text",
-        "title": "4",
-        "payload": "pl-arr-luu"
-      },
-      {
-        "content_type": "text",
-        "title": "5",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "6",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "7",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "8",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "9",
-        "payload": "pl-pae"
-      },
-      {
-        "content_type": "text",
-        "title": "10",
-        "payload": "pl-pae"
-      }
-    ]
-  }
-  callSend(sender_psid, response);
-}
-
-const sfTwoForThree = (sender_psid) => {
-  let response1 = {
-    "text": "သုံးထပ်သား = ၉၀ကျပ်သား \n\n ချင်း = ၆တက် \n\n ကြက်သွန်နီဥကြီး = ၃လုံး \n\n ကြက်သွန်နီဥသေး = ၃၀လုံး \n\n ကြက်သွန်ဖြူ = ၁၅တက် \n\n နာနတ်ပွင့် = ၆ပွင့် \n\n ဟင်းချက်ဝိုင် = ၆ဇွန်း \n\n သကြား = ၃ ဇွန်း \n\n ABCပဲငံပြာရည်အကျဲ = ၆ဇွန်း \n\n ABCပဲငံပြာရည်အပျစ် = ၃ဇွန်း \n\n"
-  };
-  let response2 = {
-    "attachment": {
-      "type": "template",
-      "payload": {
-        "template_type": "button",
-        "text": "What do you want to eat?",
-        "buttons": [{
-            "type": "postback",
-            "title": "Check!",
-            "payload": "ch-two-check"
-          },
-          {
-            "type": "postback",
-            "title": "How to cook",
-            "payload": "ch-two-how-to"
           },
           {
             "type": "web_url",
@@ -2211,6 +1675,61 @@ const sfTwoForThree = (sender_psid) => {
 const sfTwoHowTo = (sender_psid) => {
   let response1 = {
     "text": "၁။ ပထမဆုံး ပဲကြာဇံ ကို (၁)နာရီခန့်ရေကြိုစိမ်ထားပါ။ \n\n ၂။ ပုစွန်တွေကို အခွံခွာသန့်စင်ပြီးအရသာနယ်ထားပါ။ \n\n ၃။ အသီးအရွက်တွေကိုမိမိစိတ်ကြိုက်လှီးဖြတ်ထားပါ။ \n\n ၄။ ဒယ်အိုးတစ်လုံးကိုအပူပေးပြီးဆီအနည်းငယ်မှာ ပုစွန်တွေကိုဦးစွာအိုးကင်းပူပေးပြီးဆီစစ်ထားပါ။ \n\n ၅။ ထိုအိုးထဲမှာပဲ ဆီအနည်းငယ်ဖြင့် ကြက်ဥကိုမွှေကြော်ပါ။ \n\n ၆။ ခပ်ကြမ်းကြမ်းလှီးထားသောကြက်သွန်နီနှင့်ဓားပြားရိုက်ထားသော ကြက်သွန်ဖြူကိုဆီသပ်ပါ။ \n\n ၇။ မွှေးလာလျှင် ကြက်သွန်မြိတ်မှလွဲပြီးတခြားအသီးအရွက်တွေထည့်ကြော်ပါ။ \n\n ၈။ ABCပဲငံပြာရည်အပျစ်၊ ABCပဲငံပြာရည်အကျဲ၊ ခရုဆီ ၊သကြား၊ အရသာမှုန့်တို့ဖြင့်အရသာဖြည့်စွက်ပါ။ \n\n ၉။ အရိုးပြုတ်ရည်(သို့)ရေနွေးလေးအနည်းငယ်ထည့်ပြီး ရေစိမ်ထားတဲ့ပဲကြာဇံတွေထည့်ပြီးအဖုံးအုပ်ထားပါ။ \n\n ၁၀။ ရေခမ်းလာလျှင် ပဲကြာဇံနှင့်အသီးအရွက်တွေသမသွားအောင်မွှေပေးပြီးပုစွန်တွေပြန်ထည့်ပါ။ \n\n ၁၁။ ကြာဇံတွေအိသွားပြီဆိုလျှင်ငရုတ်ကောင်းမှုန့်ဖြူးပြီး လက်တဆစ်ခန့်လှီးထားသောကြက်သွန်မြိတ်တွေထည့်မွှေကာဖိုပေါ်မှချပါ။ \n\n မှတ်ချက်။ ပဲကြာဇံကိုအရမ်းအိပြဲသွားအောင်မကြော်ရပါ။ ကြာဇံကိုရေပြည့်ဝစွာစိမ်ထားလျှင်ကြော်ချိန်(၅)မိနစ်ခန့်မျှသာကြာပါမည်။"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+          "type": "web_url",
+          "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+          "title": "Shop Now"
+        }]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+/************************
+Functions for Seafood three
+*************************/
+const sfThreeIngre = (sender_psid) => {
+  let response1 = {
+    "text": "ပုစွန်ခွာပြီး = ၁၀ သား \n\n ပန်းဂေါ်ဖီစိမ်း = ၁ခု \n\n ကြက်သွန်ဖြူ = ၃တက် \n\n ချင်းသေးသေး = ၁တက် \n\n ABC ပဲငံပြာရည်အကြည် \n\n ခရုဆီ \n\n ပြောင်းမှုန့်(သို့)ကော်မှုန့်"
+  };
+  let response2 = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "button",
+        "text": "What do you want to eat?",
+        "buttons": [{
+            "type": "postback",
+            "title": "How to cook",
+            "payload": "sf-three-how-to"
+          },
+          {
+            "type": "web_url",
+            "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+            "title": "Shop Now"
+          }
+        ]
+      }
+    }
+  };
+  callSend(sender_psid, response1).then(() => {
+    return callSend(sender_psid, response2);
+  });
+}
+
+const sfThreeHowTo = (sender_psid) => {
+  let response1 = {
+    "text": "၁။ ပုစွန်တွေကိုအခွံခွာသန့်စင်ထားပါ။အကောင်ကြီးပါကထက်ခြမ်းခွဲထားပါ။ \n\n ၂။ ပန်းဂေါ်ဖီစိမ်း ကိုအခက်ငယ်လေးများအဖြစ်သင်ယူပြီးဆားပါသောရေမှာနှစ်ကြိမ်ခန့်ရေဆေးကာစစ်ထားပါ။ \n\n ၃။ ကြက်သွန်ဖြူကိုခပ်ကြမ်းကြမ်းစဥ်းပြီး ချင်းကိုအမျှင်လေးတွေလှီးပါ။ \n\n ၄။ ကော်မှုန့်(သို့)ပြောင်းမှုန့်ကိုရေဖျော်ထားပါ။ \n\n ၅။ ဒယ်အိုးတစ်လုံးမှာဆီအနည်းကိုအပူပေးပြီးပုစွန်တွေကိုဆီပူထိုးပြီးဆယ်ယူထားပါ။ \n\n ၆။ လက်ကျန်ဆီထဲမှာ ချင်း ၊ ကြက်သွန်ဖြူ ကိုမွှေးအောင်ဆီသပ်ပြီးပန်းစိမ်းတွေထည့်ပါ။ \n\n ၇။ အနည်းငယ်နွမ်းလာလျှင် ABC ပဲငံပြာရည်အကြည် ၊ အရသာမှုန့်၊ သကြား ၊ ခရုဆီတို့ဖြင့်အရသာဖြည့်စွက်ပါ။ \n\n ၈။ ဆီပူထိုးထားတဲ့ပုစွန်တွေထည့်ပြီးဟင်းရွက်ပြုတ်ရည်လေးအနည်းငယ်ထည့်ပြီးမွှေပေးပါ။ \n\n ၉။ နောက်ဆုံးမှာ အနည်းငယ်ပျစ်သွား​စရန်ေကော်ရည်လေးလောင်းထည့်မွှေပါ။ငရုတ်ကောင်းမှုန့်လေးဖြူးပါ။"
   };
   let response2 = {
     "attachment": {
