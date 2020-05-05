@@ -344,19 +344,19 @@ const admin = (sender_psid) => {
           "buttons": [{
               "type": "web_url",
               "title": "View Orders",
-              "url": "https://new-hope-a1a0b.web.app/admin/orders",
+              "url": "https://new-hope-ecommerce.herokuapp.com/admin/orders",
   
             },
             {
               "type": "web_url",
               "title": "Manage Meals",
-              "url": "https://new-hope-a1a0b.web.app/admin/meals",
+              "url": "https://new-hope-ecommerce.herokuapp.com/admin/meals",
              
             },
             {
               "type": "web_url",
               "title": "Manage Ingredients",
-              "url": "https://new-hope-a1a0b.web.app/admin/ingredients",
+              "url": "https://new-hope-ecommerce.herokuapp.com/admin/ingredients",
           
             },
           ]
