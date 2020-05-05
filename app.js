@@ -119,20 +119,23 @@ app.get('/webhook', (req, res) => {
   }
 });
 
-function handleMessage(sender_psid, received_message) {
-  let response;
-  // Checks if the message contains text
-  if (received_message.text === 'Hi') {
-    greetUser(sender_psid);
-  } else if (received_message.text === 'Lunch') {
-    lunch(sender_psid);
-  } else if (received_message.text === 'Chicken') {
-    chicken(sender_psid);
-  } else if (received_message.text === 'Shop Now') {
-    shopNow(sender_psid);
+/**********************************************
+Function to Handle when user send text message
+***********************************************/
+
+const handleMessage = (sender_psid, received_message) => {
+  let user_message = received_message.text.toLowerCase();
+
+  switch (user_message) {
+    case "hi":
+      greetUser(sender_psid);
+      break;
+    case "!admin":
+      admin(sender_psid);
+      break;
+    default:
+      defaultReply(sender_psid);
   }
-  // Send the response message
-  callSend(sender_psid, response);
 }
 
 /****************************************************
@@ -324,6 +327,51 @@ const getUserProfile = (sender_psid) => {
       }
     });
   });
+}
+
+/* FUNCTION TO ADMIN */
+const admin = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+            "title": "View Orders",
+            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
+            "subtitle": "ဒီတစ်ခါ နွေရာသီပူပူမှာခံတွင်းလိုက်စေမယ့်ဟင်းလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
+            "buttons": [{
+              "type": "web_url",
+              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+              "title": "View Orders"
+            }]
+          },
+          {
+            "title": "Manage Meals",
+            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
+            "subtitle": "ငါးပိထောင်းက နူးညံ့အိစက်နေတဲ့အတွက်သရက်သီးစိမ်းလေးနဲ့တို့မလား၊ သခွားသီးလေးနဲ့ကော်ပြီးတို့မလား၊ ထမင်းနဲ့ ဇွိကနဲနယ်စားမလား၊ စားချင်ရာနဲ့သာစားပါ။",
+            "buttons": [{
+              "type": "web_url",
+              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+              "title": "Manage Meals"
+            }]
+          },
+          {
+            "title": "Manage Ingredients",
+            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
+            "subtitle": "ငါးပိထောင်းက နူးညံ့အိစက်နေတဲ့အတွက်သရက်သီးစိမ်းလေးနဲ့တို့မလား၊ သခွားသီးလေးနဲ့ကော်ပြီးတို့မလား၊ ထမင်းနဲ့ ဇွိကနဲနယ်စားမလား၊ စားချင်ရာနဲ့သာစားပါ။",
+            "buttons": [{
+              "type": "web_url",
+              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
+              "title": "Manage Ingredients"
+            }]
+          }
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
 }
 
 /*FUNCTION TO GREET USER*/
