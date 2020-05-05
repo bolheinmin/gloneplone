@@ -338,36 +338,37 @@ const admin = (sender_psid) => {
       "payload": {
         "template_type": "generic",
         "elements": [{
-            "title": "View Orders",
-            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
-            "subtitle": "ဒီတစ်ခါ နွေရာသီပူပူမှာခံတွင်းလိုက်စေမယ့်ဟင်းလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
-            "buttons": [{
-              "type": "web_url",
-              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-              "title": "View Orders"
-            }]
+          "title": "Welcome!",
+          "image_url": "https://i.imgur.com/1BiVvOE.png",
+          "subtitle": "We have the right hat for everyone.",
+          "default_action": {
+            "type": "web_url",
+            "url": "https://petersfancybrownhats.com/view?item=103",
+            "webview_height_ratio": "tall",
           },
-          {
-            "title": "Manage Meals",
-            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
-            "subtitle": "ငါးပိထောင်းက နူးညံ့အိစက်နေတဲ့အတွက်သရက်သီးစိမ်းလေးနဲ့တို့မလား၊ သခွားသီးလေးနဲ့ကော်ပြီးတို့မလား၊ ထမင်းနဲ့ ဇွိကနဲနယ်စားမလား၊ စားချင်ရာနဲ့သာစားပါ။",
-            "buttons": [{
+          "buttons": [{
               "type": "web_url",
-              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-              "title": "Manage Meals"
-            }]
-          },
-          {
-            "title": "Manage Ingredients",
-            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
-            "subtitle": "ငါးပိထောင်းက နူးညံ့အိစက်နေတဲ့အတွက်သရက်သီးစိမ်းလေးနဲ့တို့မလား၊ သခွားသီးလေးနဲ့ကော်ပြီးတို့မလား၊ ထမင်းနဲ့ ဇွိကနဲနယ်စားမလား၊ စားချင်ရာနဲ့သာစားပါ။",
-            "buttons": [{
+              "title": "View Orders",
+              "url": "https://newhope-grocery-store.herokuapp.com/addpackage/",
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+            {
               "type": "web_url",
-              "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-              "title": "Manage Ingredients"
-            }]
-          }
-        ]
+              "title": "Manage Meals",
+              "url": "https://newhope-grocery-store.herokuapp.com/addpackage/",
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+            {
+              "type": "web_url",
+              "title": "Manage Ingredients",
+              "url": "https://newhope-grocery-store.herokuapp.com/addpackage/",
+              "webview_height_ratio": "full",
+              "messenger_extensions": true,
+            },
+          ]
+        }]
       }
     }
   }
