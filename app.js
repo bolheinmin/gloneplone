@@ -345,19 +345,19 @@ const admin = (sender_psid) => {
               "type": "web_url",
               "title": "View Orders",
               "url": "https://new-hope-ecommerce.herokuapp.com/admin/orders",
-  
+
             },
             {
               "type": "web_url",
               "title": "Manage Meals",
               "url": "https://new-hope-ecommerce.herokuapp.com/admin/meals",
-             
+
             },
             {
               "type": "web_url",
               "title": "Manage Ingredients",
               "url": "https://new-hope-ecommerce.herokuapp.com/admin/ingredients",
-          
+
             },
           ]
         }]
@@ -1015,7 +1015,9 @@ const porkOneIngre = (sender_psid) => {
           {
             "type": "web_url",
             "url": "https://new-hope-a1a0b.web.app/meals/7mJbQUg5bdQbZCtylXXK?meal=%E1%80%9E%E1%80%AF%E1%80%B6%E1%80%B8%E1%80%91%E1%80%95%E1%80%BA%E1%80%9E%E1%80%AC%E1%80%B8%E1%80%A1%E1%80%81%E1%80%BB%E1%80%AD%E1%80%AF%E1%80%81%E1%80%BB%E1%80%80%E1%80%BA",
-            "title": "Shop Now"
+            "title": "Shop Now",
+            "webview_height_ratio": "full",
+            "messenger_extensions": true,
           }
         ]
       }
