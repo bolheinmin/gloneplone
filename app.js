@@ -341,11 +341,6 @@ const admin = (sender_psid) => {
           "title": "Welcome!",
           "image_url": "https://i.imgur.com/1BiVvOE.png",
           "subtitle": "We have the right hat for everyone.",
-          "default_action": {
-            "type": "web_url",
-            "url": "https://petersfancybrownhats.com/view?item=103",
-            "webview_height_ratio": "tall",
-          },
           "buttons": [{
               "type": "web_url",
               "title": "View Orders",
@@ -2051,7 +2046,7 @@ FUNCTION TO ADD WHITELIST DOMAIN
 const whitelistDomains = (res) => {
   var messageData = {
     "whitelisted_domains": [
-      "https://newhope-grocery-store.herokuapp.com",
+      "https://new-hope-a1a0b.web.app",
       "https://herokuapp.com"
     ]
   };
