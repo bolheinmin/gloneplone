@@ -345,22 +345,19 @@ const admin = (sender_psid) => {
               "type": "web_url",
               "title": "View Orders",
               "url": "https://new-hope-a1a0b.web.app/admin/orders",
-              "webview_height_ratio": "full",
-              "messenger_extensions": true,
+  
             },
             {
               "type": "web_url",
               "title": "Manage Meals",
               "url": "https://new-hope-a1a0b.web.app/admin/meals",
-              "webview_height_ratio": "full",
-              "messenger_extensions": true,
+             
             },
             {
               "type": "web_url",
               "title": "Manage Ingredients",
               "url": "https://new-hope-a1a0b.web.app/admin/ingredients",
-              "webview_height_ratio": "full",
-              "messenger_extensions": true,
+          
             },
           ]
         }]
