@@ -2046,7 +2046,7 @@ const whitelistDomains = (res) => {
   var messageData = {
     "whitelisted_domains": [
       "https://new-hope-a1a0b.web.app",
-      "https://herokuapp.com"
+      "https://firebase.google.com"
     ]
   };
   request({
