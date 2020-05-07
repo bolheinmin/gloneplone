@@ -405,9 +405,9 @@ const electronic = (sender_psid) => {
       "payload": {
         "template_type": "generic",
         "elements": [{
-            "title": "Xiaomi Mi 8",
+            "title": "Headphone",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "point - 1000",
+            "subtitle": "point - 50",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -415,9 +415,9 @@ const electronic = (sender_psid) => {
             }]
           },
           {
-            "title": "Xiaomi Mi 8",
+            "title": "Earphone",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "point - 1000",
+            "subtitle": "point - 30",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -425,9 +425,9 @@ const electronic = (sender_psid) => {
             }]
           },
           {
-            "title": "Xiaomi Mi 8",
+            "title": "Power Bank",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "point - 1000",
+            "subtitle": "point - 45",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -435,9 +435,9 @@ const electronic = (sender_psid) => {
             }]
           },
           {
-            "title": "Xiaomi Mi 8",
+            "title": "Table Lamp",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "point - 1000",
+            "subtitle": "point - 60",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -445,7 +445,37 @@ const electronic = (sender_psid) => {
             }]
           },
           {
-            "title": "Xiaomi Mi 8",
+            "title": "Digital Table Watch",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "point - 100",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
+          {
+            "title": "Digital Watch",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "point - 200",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
+          {
+            "title": "Stand Fan",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "point - 200",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
+          {
+            "title": "Phone",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
@@ -453,7 +483,17 @@ const electronic = (sender_psid) => {
               "title": "View",
               "payload": "ch-five-ingre"
             }]
-          }
+          },
+          {
+            "title": "Flat Tv",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
         ]
       }
     }
@@ -469,9 +509,9 @@ const clothing = (sender_psid) => {
       "payload": {
         "template_type": "generic",
         "elements": [{
-            "title": "Eain Gyi",
+            "title": "T shirt",
             "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
-            "subtitle": "something",
+            "subtitle": "point - 20",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -479,9 +519,9 @@ const clothing = (sender_psid) => {
             }]
           },
           {
-            "title": "Boung Be",
+            "title": "Summer Shirt",
             "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
-            "subtitle": "something",
+            "subtitle": "point - 30",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -489,9 +529,9 @@ const clothing = (sender_psid) => {
             }]
           },
           {
-            "title": "Oo Htote",
+            "title": "Hoodies",
             "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
-            "subtitle": "something",
+            "subtitle": "point - 50",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -499,9 +539,9 @@ const clothing = (sender_psid) => {
             }]
           },
           {
-            "title": "Fi nak",
+            "title": "Jeans Short pant",
             "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
-            "subtitle": "something",
+            "subtitle": "point - 45",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -509,15 +549,45 @@ const clothing = (sender_psid) => {
             }]
           },
           {
-            "title": "Lat pat",
+            "title": "Jeans Long Pant",
             "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
-            "subtitle": "something",
+            "subtitle": "point -",
             "buttons": [{
               "type": "postback",
               "title": "View",
               "payload": "ch-five-ingre"
             }]
-          }
+          },
+          {
+            "title": "Sport Wear Set",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "point - 100",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
+          {
+            "title": "School Skirt",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "point - 60",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
+          {
+            "title": "Bikini Set",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "point - 80",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          },
         ]
       }
     }
@@ -533,9 +603,9 @@ const cosmetic = (sender_psid) => {
       "payload": {
         "template_type": "generic",
         "elements": [{
-            "title": "Lotions",
+            "title": "Lipstick",
             "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
-            "subtitle": "something",
+            "subtitle": "point -10",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -543,9 +613,9 @@ const cosmetic = (sender_psid) => {
             }]
           },
           {
-            "title": "Gels",
+            "title": "Masakara",
             "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
-            "subtitle": "something",
+            "subtitle": "point - 10",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -553,9 +623,9 @@ const cosmetic = (sender_psid) => {
             }]
           },
           {
-            "title": "Sticks",
+            "title": "Perfume",
             "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
-            "subtitle": "something",
+            "subtitle": "point - 50",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -563,9 +633,9 @@ const cosmetic = (sender_psid) => {
             }]
           },
           {
-            "title": "Powders",
+            "title": "Make Up Powder",
             "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
-            "subtitle": "something",
+            "subtitle": "point - 40",
             "buttons": [{
               "type": "postback",
               "title": "View",
@@ -573,9 +643,9 @@ const cosmetic = (sender_psid) => {
             }]
           },
           {
-            "title": "Creams or emulsions",
+            "title": "Hair spray",
             "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
-            "subtitle": "something",
+            "subtitle": "point - 15",
             "buttons": [{
               "type": "postback",
               "title": "View",
