@@ -188,8 +188,8 @@ const handlePostback = (sender_psid, received_postback) => {
     case "clothing":
       clothing(sender_psid);
       break;
-    case "cosmetic":
-      cosmetic(sender_psid);
+    case "comsetic":
+      com(sender_psid);
       break;
     default:
       defaultReply(sender_psid);
@@ -397,7 +397,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-one-ingre"
             }]
           },
@@ -407,7 +407,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-two-ingre"
             }]
           },
@@ -417,7 +417,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-three-ingre"
             }]
           },
@@ -427,7 +427,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-four-ingre"
             }]
           },
@@ -437,7 +437,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-five-ingre"
             }]
           }
@@ -461,7 +461,7 @@ const clothing = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-one-ingre"
             }]
           },
@@ -471,7 +471,7 @@ const clothing = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-two-ingre"
             }]
           },
@@ -481,7 +481,7 @@ const clothing = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-three-ingre"
             }]
           },
@@ -491,7 +491,7 @@ const clothing = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-four-ingre"
             }]
           },
@@ -501,7 +501,7 @@ const clothing = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-five-ingre"
             }]
           }
@@ -525,7 +525,7 @@ const cosmetic = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-one-ingre"
             }]
           },
@@ -535,7 +535,7 @@ const cosmetic = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-two-ingre"
             }]
           },
@@ -545,7 +545,7 @@ const cosmetic = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-three-ingre"
             }]
           },
@@ -555,7 +555,7 @@ const cosmetic = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-four-ingre"
             }]
           },
@@ -565,7 +565,7 @@ const cosmetic = (sender_psid) => {
             "subtitle": "something",
             "buttons": [{
               "type": "postback",
-              "title": "Get",
+              "title": "View",
               "payload": "ch-five-ingre"
             }]
           }
