@@ -355,8 +355,8 @@ const searchByCategory = (sender_psid) => {
       },
       {
         "content_type": "text",
-        "title": "Clothing",
-        "payload": "clothing"
+        "title": "Pork",
+        "payload": "pork"
       },
       {
         "content_type": "text",
@@ -365,13 +365,13 @@ const searchByCategory = (sender_psid) => {
       },
       {
         "content_type": "text",
-        "title": "Cosmetic",
-        "payload": "cosmetic"
+        "title": "Beef",
+        "payload": "beef"
       },
       {
         "content_type": "text",
-        "title": "Fancy",
-        "payload": "fancy"
+        "title": "Sea Food",
+        "payload": "sea-food"
       }
     ]
   };
