@@ -186,7 +186,10 @@ const handlePostback = (sender_psid, received_postback) => {
       electric(sender_psid);
       break;
     case "clothing":
-      electric(sender_psid);
+      clothing(sender_psid);
+      break;
+    case "cosmetic":
+      cosmetic(sender_psid);
       break;
     default:
       defaultReply(sender_psid);
@@ -336,8 +339,8 @@ const searchProducts = (sender_psid) => {
           },
           {
             "type": "postback",
-            "title": "Search by category",
-            "payload": "search-by-category"
+            "title": "Cosmetic",
+            "payload": "cosmetic"
           }
         ]
       }
@@ -432,6 +435,134 @@ const electric = (sender_psid) => {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-five-ingre"
+            }]
+          }
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const clothing = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+            "title": "Eain Gyi",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-one-ingre"
+            }]
+          },
+          {
+            "title": "Boung Be",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-two-ingre"
+            }]
+          },
+          {
+            "title": "Oo Htote",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-three-ingre"
+            }]
+          },
+          {
+            "title": "Fi nak",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-four-ingre"
+            }]
+          },
+          {
+            "title": "Lat pat",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-five-ingre"
+            }]
+          }
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const cosmetic = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+            "title": "Lotions",
+            "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-one-ingre"
+            }]
+          },
+          {
+            "title": "Gels",
+            "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-two-ingre"
+            }]
+          },
+          {
+            "title": "Sticks",
+            "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-three-ingre"
+            }]
+          },
+          {
+            "title": "Powders",
+            "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
+            "subtitle": "something",
+            "buttons": [{
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-four-ingre"
+            }]
+          },
+          {
+            "title": "Creams or emulsions",
+            "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
+            "subtitle": "something",
             "buttons": [{
               "type": "postback",
               "title": "Get",
