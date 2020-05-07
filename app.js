@@ -461,8 +461,8 @@ const searchByCategory = (sender_psid) => {
       },
       {
         "content_type": "text",
-        "title": "Fancy”",
-        "payload": "fancy”"
+        "title": "Fancy",
+        "payload": "fancy"
       }
     ]
   };
