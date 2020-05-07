@@ -188,8 +188,8 @@ const handlePostback = (sender_psid, received_postback) => {
     case "clothing":
       clothing(sender_psid);
       break;
-    case "comsetic":
-      com(sender_psid);
+    case "cosmetic":
+      cosmetic(sender_psid);
       break;
     default:
       defaultReply(sender_psid);
