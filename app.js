@@ -333,7 +333,7 @@ const searchProducts = (sender_psid) => {
             "buttons": [{
               "type": "postback",
               "title": "View",
-              "payload": "ch-one-ingre"
+              "payload": "electronic"
             }]
           },
           {
@@ -343,7 +343,7 @@ const searchProducts = (sender_psid) => {
             "buttons": [{
               "type": "postback",
               "title": "View",
-              "payload": "ch-two-ingre"
+              "payload": "cosmetic"
             }]
           },
           {
@@ -353,7 +353,7 @@ const searchProducts = (sender_psid) => {
             "buttons": [{
               "type": "postback",
               "title": "View",
-              "payload": "ch-three-ingre"
+              "payload": "clothing"
             }]
           },
           {
