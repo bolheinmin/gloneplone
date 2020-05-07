@@ -182,8 +182,8 @@ const handlePostback = (sender_psid, received_postback) => {
     case "search-by-category":
       searchByCategory(sender_psid);
       break;
-    case "electric":
-      searchByCategory(sender_psid);
+    case "electronic":
+      electronic(sender_psid);
       break;
     case "clothing":
       clothing(sender_psid);
@@ -325,28 +325,61 @@ const searchProducts = (sender_psid) => {
     "attachment": {
       "type": "template",
       "payload": {
-        "template_type": "button",
-        "text": "“Elecric, Clothing, Cosmetic, Fancy”",
-        "buttons": [{
-            "type": "postback",
-            "title": "Electric",
-            "payload": "electric"
+        "template_type": "generic",
+        "elements": [{
+            "title": "Electronic accessories",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSBSBlV-8KfXJ75HH-Hq4DcwyPFnulr6f3Pm2LT98uh5mW6sfz&usqp=CAU",
+            "subtitle": "Discover the best Electronics Accessories & Supplies in Best Sellers.",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-one-ingre"
+            }]
           },
           {
-            "type": "postback",
-            "title": "Clothing",
-            "payload": "clothing"
-          },
-          {
-            "type": "postback",
             "title": "Cosmetic",
-            "payload": "cosmetic"
+            "image_url": "https://lh3.googleusercontent.com/proxy/zXb0A7655SNaUDeDpOzowoOnyoSaz0MXuOjzMRWJTxzV-zpg4gCIzKZ3XtWaY0E-D_ebGq_nNfKyb5XPQHl2QTzsgoAmkh_QnSpgN3xM5LzSt4GilTxwOHM_3lIcOnboZodbKe1p_p4NH9cvtXs67iw2hil92qFxSrhUu0xiS83KvyVy",
+            "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-two-ingre"
+            }]
           },
-
+          {
+            "title": "Clothing",
+            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-three-ingre"
+            }]
+          },
+          {
+            "title": "Fancy",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-6idUYyyoSTrR7Nw3AFA89gRRl_WRvNZHCiUQduMnjeH7RF8n&usqp=CAU",
+            "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-four-ingre"
+            }]
+          },
+          {
+            "title": "Other Accessories",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "ch-five-ingre"
+            }]
+          }
         ]
       }
     }
-  };
+  }
   callSend(sender_psid, response);
 }
 
@@ -357,14 +390,14 @@ const searchByCategory = (sender_psid) => {
     "text": "Categories တခုချင်းစီကို နှိပ်ပြီး ရှာလို့ရပါတယ်။",
     "quick_replies": [{
       "content_type": "text",
-      "title": "Electric",
-      "payload": "electric"
+      "title": "electronic",
+      "payload": "electronic"
     }]
   };
   callSend(sender_psid, response);
 }
 
-const electric = (sender_psid) => {
+const electronic = (sender_psid) => {
   let response;
   response = {
     "attachment": {
