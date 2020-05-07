@@ -145,8 +145,8 @@ Function to Handle when user send quick reply message
 function handleQuickReply(sender_psid, received_message) {
 
   switch (received_message) {
-    case "chicken":
-      chicken(sender_psid);
+    case "electric":
+      electric(sender_psid);
       break;
     case "pork":
       pork(sender_psid);
@@ -176,8 +176,8 @@ const handlePostback = (sender_psid, received_postback) => {
     case "get_started":
       greetUser(sender_psid);
       break;
-    case "search-meals":
-      searchMeals(sender_psid);
+    case "search-products":
+      searchProducts(sender_psid);
       break;
     case "search-by-category":
       searchByCategory(sender_psid);
@@ -371,15 +371,9 @@ const admin = (sender_psid) => {
 async function greetUser(sender_psid) {
   let user = await getUserProfile(sender_psid);
   let response1 = {
-    "text": "မင်္ဂလာပါ " + user.first_name + " " + user.last_name + ". New Hope Grocery မှ ကြိုဆိုပါတယ်ခင်ဗျ 🙂"
+    "text": "မင်္ဂလာပါ " + user.first_name + " " + user.last_name + ""
   };
   let response2 = {
-    "text": "မင်္ဂလာပါခင်ဗျ၊"
-  }
-  let response3 = {
-    "text": "Hello"
-  };
-  let response4 = {
     "attachment": {
       "type": "template",
       "payload": {
@@ -387,13 +381,13 @@ async function greetUser(sender_psid) {
         "text": "What do you want to eat?",
         "buttons": [{
             "type": "postback",
-            "title": "Admin နဲ့ Chat မယ်",
-            "payload": "chat-with-admin"
+            "title": "My Points",
+            "payload": "my-points"
           },
           {
             "type": "postback",
-            "title": "Search Meals",
-            "payload": "search-meals"
+            "title": "Search Products",
+            "payload": "search-products"
           },
           {
             "type": "postback",
@@ -405,23 +399,19 @@ async function greetUser(sender_psid) {
     }
   };
   callSend(sender_psid, response1).then(() => {
-    return callSend(sender_psid, response2).then(() => {
-      return callSend(sender_psid, response3).then(() => {
-        return callSend(sender_psid, response4);
-      });
-    });
+    return callSend(sender_psid, response2);
   });
 }
 
 /* FUNCTION TO SEARCH MEALS */
-const searchMeals = (sender_psid) => {
+const searchProducts = (sender_psid) => {
   let response;
   response = {
     "attachment": {
       "type": "template",
       "payload": {
         "template_type": "button",
-        "text": "“ကြက်သား ဝက်သား ငါး,…” စသည့်အကြောင်းအရာများအားဖြင့် ရှာဖွေနိုင်ပါတယ်။ \n\n ယနေ့အတွက် ဟင်းပွဲတွေအကြောင်းနှင့် လတ်တလော လူစိတ်ဝင်စားမှုများသောဟင်းပွဲများအကြောင်းသိချင်ပါသလား။ \n\n အောက်က Button လေးတွေကို နှိပ်ပြီး ရှာဖွေနိုင်ပါတယ်နော်။",
+        "text": "“Elecric, Clothing, Cosmetic, Fancy”",
         "buttons": [{
             "type": "postback",
             "title": "Today Meals",
@@ -451,13 +441,13 @@ const searchByCategory = (sender_psid) => {
     "text": "Categories တခုချင်းစီကို နှိပ်ပြီး ရှာလို့ရပါတယ်။",
     "quick_replies": [{
         "content_type": "text",
-        "title": "Chicken",
-        "payload": "chicken"
+        "title": "“Elecric",
+        "payload": "electric"
       },
       {
         "content_type": "text",
-        "title": "Pork",
-        "payload": "pork"
+        "title": "Clothing",
+        "payload": "clothing"
       },
       {
         "content_type": "text",
@@ -466,21 +456,20 @@ const searchByCategory = (sender_psid) => {
       },
       {
         "content_type": "text",
-        "title": "Beef",
-        "payload": "beef"
+        "title": "Cosmetic",
+        "payload": "cosmetic"
       },
       {
         "content_type": "text",
-        "title": "Sea Food",
-        "payload": "sea-food"
+        "title": "Fancy”",
+        "payload": "fancy”"
       }
     ]
   };
   callSend(sender_psid, response);
 }
 
-/* FUNCTION TO CHICKEN */
-const chicken = (sender_psid) => {
+const electric = (sender_psid) => {
   let response;
   response = {
     "attachment": {
@@ -488,111 +477,57 @@ const chicken = (sender_psid) => {
       "payload": {
         "template_type": "generic",
         "elements": [{
-            "title": "ကြက်သားချဥ်စော်ခါးသီးသောက်ဆမ်း",
-            "image_url": "https://firebasestorage.googleapis.com/v0/b/new-hope-a1a0b.appspot.com/o/chicken%2Fchicken%20soup_1587378249871?alt=media&token=af1d6f12-536e-4d0d-9a1b-8b2074d975f3",
-            "subtitle": "ဒီတစ်ခါ နွေရာသီပူပူမှာခံတွင်းလိုက်စေမယ့်ဟင်းလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
+            "title": "Xiaomi Mi 8",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
             "buttons": [{
                 "type": "postback",
-                "title": "View ingredients",
+                "title": "Get",
                 "payload": "ch-one-ingre"
-              },
-              {
-                "type": "postback",
-                "title": "How to cook?",
-                "payload": "ch-one-how-to"
-              },
-              {
-                "type": "web_url",
-                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-                "title": "Shop Now"
               }
             ]
           },
           {
-            "title": "ကြက်ဥကြော်နှပ်",
-            "image_url": "https://petersfancybrownhats.com/company_image.png",
-            "subtitle": "ဘယ်သူမဆိုဒီလိုပူအိုက်တဲ့ရာသီမှာအနှစ်ပါတဲ့ဟင်းတွေ၊ဆီပါတဲ့ဟင်းတွေကိုစားချင်ကြမှာမဟုတ်ဘူး။ဒီဟင်းပွဲလေးကတော့ ထမင်းဖြူလေးနဲ့နယ်ဖတ်စားရင်တောင်အရသာရှိမှာအမှန်ပါပဲ။",
+            "title": "Xiaomi Mi 8",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
                 "payload": "ch-two-ingre"
-              },
-              {
-                "type": "postback",
-                "title": "How to cook?",
-                "payload": "ch-two-how-to"
-              },
-
-              {
-                "type": "web_url",
-                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-                "title": "Shop Now"
               }
             ]
           },
           {
-            "title": "ကြက်သားပင်စိမ်းအစပ်ကြော်",
-            "image_url": "https://petersfancybrownhats.com/company_image.png",
-            "subtitle": "ဆောင်းရာသီနဲ့လိုက်ဖက်တဲ့ဟင်းလေးတစ်ခွက်ချက်စားကြရအောင်။ ထိုင်းလိုတော့ ဖတ်ကဖောင်ခေါ်ပါတယ်။ မိမိကြိုက်နှစ်သက်ရာအသားများနှင့်ကြော်နိူင်ပါတယ်။",
+            "title": "Xiaomi Mi 8",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
                 "payload": "ch-three-ingre"
-              },
-              {
-                "type": "postback",
-                "title": "How to cook?",
-                "payload": "ch-three-how-to"
-              },
-
-              {
-                "type": "web_url",
-                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-                "title": "Shop Now"
               }
             ]
           },
           {
-            "title": "ကြက်​သားနှင့်ပိန္နဲသီးဆီပြန်",
-            "image_url": "https://petersfancybrownhats.com/company_image.png",
-            "subtitle": "ဒီတစ်ခါ နွေရာသီပူပူမှာခံတွင်းလိုက်စေမယ့်ဟင်းလေးတစ်မယ်ဖော်ပြပေးလိုက်ပါတယ်။",
+            "title": "Xiaomi Mi 8",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
                 "payload": "ch-four-ingre"
-              },
-              {
-                "type": "postback",
-                "title": "How to cook?",
-                "payload": "ch-four-how-to"
-              },
-
-              {
-                "type": "web_url",
-                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-                "title": "Shop Now"
               }
             ]
           },
           {
-            "title": "ရှမ်းအရည်ဖျော်",
-            "image_url": "https://petersfancybrownhats.com/company_image.png",
-            "subtitle": "ရေစိမ်ခေါက်ဆွဲ(ဆန်ဖွယ်)သို့မဟုတ် ဆန်စီးနဲ့လုပ်စားနိူင်ပါတယ်။",
+            "title": "Xiaomi Mi 8",
+            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
                 "payload": "ch-five-ingre"
-              },
-              {
-                "type": "postback",
-                "title": "How to cook?",
-                "payload": "ch-five-how-to"
-              },
-
-              {
-                "type": "web_url",
-                "url": "https://new-hope-a1a0b.web.app/products?meal=XpPBwQM4xrR8bu3mY5V6",
-                "title": "Shop Now"
               }
             ]
           }
