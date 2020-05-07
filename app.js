@@ -188,6 +188,9 @@ const handlePostback = (sender_psid, received_postback) => {
     case "clothing":
       clothing(sender_psid);
       break;
+    case "women-clothing":
+      womenClothing(sender_psid);
+      break;
     case "cosmetic":
       cosmetic(sender_psid);
       break;
@@ -502,6 +505,40 @@ const electronic = (sender_psid) => {
 }
 
 const clothing = (sender_psid) => {
+  let response;
+  response = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+            "title": "Men",
+            "image_url": "https://www.edrawsoft.com/images/fashion/mansuit3.png",
+            "subtitle": "Discover the best Electronics Accessories & Supplies in Best Sellers.",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "electronic"
+            }]
+          },
+          {
+            "title": "Women",
+            "image_url": "https://www.e-marrige.net/wp-content/uploads/2015/12/women-clothing.jpg",
+            "subtitle": "point - 1000",
+            "buttons": [{
+              "type": "postback",
+              "title": "View",
+              "payload": "women-clothing"
+            }]
+          }
+        ]
+      }
+    }
+  }
+  callSend(sender_psid, response);
+}
+
+const womenClothing = (sender_psid) => {
   let response;
   response = {
     "attachment": {
