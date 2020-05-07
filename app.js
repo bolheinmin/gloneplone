@@ -180,7 +180,7 @@ const handlePostback = (sender_psid, received_postback) => {
       searchProducts(sender_psid);
       break;
     case "search-by-category":
-      searchByCategory(sender_psid);
+      electric(sender_psid);
       break;
       // chicken
     case "ch-one-ingre":
