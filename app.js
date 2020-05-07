@@ -441,7 +441,7 @@ const searchByCategory = (sender_psid) => {
     "text": "Categories တခုချင်းစီကို နှိပ်ပြီး ရှာလို့ရပါတယ်။",
     "quick_replies": [{
         "content_type": "text",
-        "title": "“Electric",
+        "title": "Electric",
         "payload": "electric"
       },
       {
