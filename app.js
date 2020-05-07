@@ -341,6 +341,11 @@ const searchProducts = (sender_psid) => {
             "type": "postback",
             "title": "Cosmetic",
             "payload": "cosmetic"
+          },
+          {
+            "type": "postback",
+            "title": "Search By Category",
+            "payload": "search-by-category"
           }
         ]
       }
