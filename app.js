@@ -342,7 +342,7 @@ const searchProducts = (sender_psid) => {
             "title": "Cosmetic",
             "payload": "cosmetic"
           },
-         
+
         ]
       }
     }
@@ -356,31 +356,10 @@ const searchByCategory = (sender_psid) => {
   response = {
     "text": "Categories တခုချင်းစီကို နှိပ်ပြီး ရှာလို့ရပါတယ်။",
     "quick_replies": [{
-        "content_type": "text",
-        "title": "Electric",
-        "payload": "electric"
-      },
-      {
-        "content_type": "text",
-        "title": "Pork",
-        "payload": "pork"
-      },
-      {
-        "content_type": "text",
-        "title": "Fish",
-        "payload": "fish"
-      },
-      {
-        "content_type": "text",
-        "title": "Beef",
-        "payload": "beef"
-      },
-      {
-        "content_type": "text",
-        "title": "Sea Food",
-        "payload": "sea-food"
-      }
-    ]
+      "content_type": "text",
+      "title": "Electric",
+      "payload": "electric"
+    }]
   };
   callSend(sender_psid, response);
 }
