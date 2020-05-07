@@ -479,7 +479,7 @@ const electric = (sender_psid) => {
         "elements": [{
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
+            "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
                 "title": "Get",
@@ -490,7 +490,7 @@ const electric = (sender_psid) => {
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
+            "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
@@ -501,7 +501,7 @@ const electric = (sender_psid) => {
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
+            "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
@@ -512,7 +512,7 @@ const electric = (sender_psid) => {
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
+            "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
@@ -523,7 +523,7 @@ const electric = (sender_psid) => {
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
-            "subtitle": "ဒီဇိုင်းလှပပြီး၊ စွမ်းဆောင်ရည်မြင့်မားသော ဖုန်း ဖြစ်ပါသည်။",
+            "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
                 "title": "View ingredients",
