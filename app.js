@@ -185,6 +185,9 @@ const handlePostback = (sender_psid, received_postback) => {
     case "electric":
       electric(sender_psid);
       break;
+    case "clothing":
+      electric(sender_psid);
+      break;
     default:
       defaultReply(sender_psid);
   }
@@ -323,13 +326,13 @@ const searchProducts = (sender_psid) => {
         "text": "“Elecric, Clothing, Cosmetic, Fancy”",
         "buttons": [{
             "type": "postback",
-            "title": "Today Meals",
-            "payload": "today-meals"
+            "title": "Electric",
+            "payload": "electric"
           },
           {
             "type": "postback",
-            "title": "Electric",
-            "payload": "electric"
+            "title": "Clothing",
+            "payload": "clothing"
           },
           {
             "type": "postback",
@@ -390,55 +393,50 @@ const electric = (sender_psid) => {
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
-                "type": "postback",
-                "title": "Get",
-                "payload": "ch-one-ingre"
-              }
-            ]
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-one-ingre"
+            }]
           },
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
-                "type": "postback",
-                "title": "Get",
-                "payload": "ch-two-ingre"
-              }
-            ]
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-two-ingre"
+            }]
           },
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
-                "type": "postback",
-                "title": "Get",
-                "payload": "ch-three-ingre"
-              }
-            ]
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-three-ingre"
+            }]
           },
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
-                "type": "postback",
-                "title": "Get",
-                "payload": "ch-four-ingre"
-              }
-            ]
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-four-ingre"
+            }]
           },
           {
             "title": "Xiaomi Mi 8",
             "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
-                "type": "postback",
-                "title": "Get",
-                "payload": "ch-five-ingre"
-              }
-            ]
+              "type": "postback",
+              "title": "Get",
+              "payload": "ch-five-ingre"
+            }]
           }
         ]
       }
