@@ -182,6 +182,9 @@ const handlePostback = (sender_psid, received_postback) => {
     case "search-by-category":
       searchByCategory(sender_psid);
       break;
+    case "electric":
+      electric(sender_psid);
+      break;
     default:
       defaultReply(sender_psid);
   }
@@ -325,8 +328,8 @@ const searchProducts = (sender_psid) => {
           },
           {
             "type": "postback",
-            "title": "Popular Meals",
-            "payload": "pop-meals"
+            "title": "Electric",
+            "payload": "electric"
           },
           {
             "type": "postback",
@@ -399,7 +402,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
-                "title": "View ingredients",
+                "title": "Get",
                 "payload": "ch-two-ingre"
               }
             ]
@@ -410,7 +413,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
-                "title": "View ingredients",
+                "title": "Get",
                 "payload": "ch-three-ingre"
               }
             ]
@@ -421,7 +424,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
-                "title": "View ingredients",
+                "title": "Get",
                 "payload": "ch-four-ingre"
               }
             ]
@@ -432,7 +435,7 @@ const electric = (sender_psid) => {
             "subtitle": "point - 1000",
             "buttons": [{
                 "type": "postback",
-                "title": "View ingredients",
+                "title": "Get",
                 "payload": "ch-five-ingre"
               }
             ]
