@@ -148,8 +148,8 @@ function handleQuickReply(sender_psid, received_message) {
     case "electric":
       electric(sender_psid);
       break;
-    case "clothing":
-      electric(sender_psid);
+    case "pork":
+      pork(sender_psid);
       break;
     case "fish":
       fish(sender_psid);
