@@ -148,8 +148,8 @@ function handleQuickReply(sender_psid, received_message) {
     case "electric":
       electric(sender_psid);
       break;
-    case "pork":
-      pork(sender_psid);
+    case "clothing":
+      electric(sender_psid);
       break;
     case "fish":
       fish(sender_psid);
@@ -180,101 +180,7 @@ const handlePostback = (sender_psid, received_postback) => {
       searchProducts(sender_psid);
       break;
     case "search-by-category":
-      electric(sender_psid);
-      break;
-      // chicken
-    case "ch-one-ingre":
-      chOneIngre(sender_psid);
-      break;
-    case "ch-two-ingre":
-      chTwoIngre(sender_psid);
-      break;
-    case "ch-three-ingre":
-      chThreeIngre(sender_psid);
-      break;
-    case "ch-four-ingre":
-      chFourIngre(sender_psid);
-      break;
-    case "ch-five-ingre":
-      chFiveIngre(sender_psid);
-      break;
-    case "ch-one-how-to":
-      chOneHowTo(sender_psid);
-      break;
-    case "ch-two-how-to":
-      chTwoHowTo(sender_psid);
-      break;
-    case "ch-three-how-to":
-      chThreeHowTo(sender_psid);
-      break;
-    case "ch-four-how-to":
-      chFourHowTo(sender_psid);
-      break;
-    case "ch-five-how-to":
-      chFiveHowTo(sender_psid);
-      break;
-      // pork
-    case "pork-one-ingre":
-      porkOneIngre(sender_psid);
-      break;
-    case "pork-two-ingre":
-      porkTwoIngre(sender_psid);
-      break;
-    case "pork-three-ingre":
-      porkThreeIngre(sender_psid);
-      break;
-    case "pork-four-ingre":
-      porkFourIngre(sender_psid);
-      break;
-    case "pork-five-ingre":
-      porkFiveIngre(sender_psid);
-      break;
-    case "pork-one-how-to":
-      porkOneHowTo(sender_psid);
-      break;
-    case "pork-two-how-to":
-      porkTwoHowTo(sender_psid);
-      break;
-    case "pork-three-how-to":
-      porkThreeHowTo(sender_psid);
-      break;
-    case "pork-four-how-to":
-      porkFourHowTo(sender_psid);
-      break;
-    case "pork-five-how-to":
-      porkFiveHowTo(sender_psid);
-      break;
-      // fish
-    case "fish-one-ingre":
-      fishOneIngre(sender_psid);
-      break;
-    case "fish-two-ingre":
-      fishTwoIngre(sender_psid);
-      break;
-    case "fish-three-ingre":
-      fishThreeIngre(sender_psid);
-      break;
-    case "fish-one-how-to":
-      fishOneHowTo(sender_psid);
-      break;
-    case "fish-two-how-to":
-      fishTwoHowTo(sender_psid);
-      break;
-    case "fish-three-how-to":
-      fishThreeHowTo(sender_psid);
-      break;
-      // seafood
-    case "sf-one-ingre":
-      sfOneIngre(sender_psid);
-      break;
-    case "sf-two-ingre":
-      sfTwoIngre(sender_psid);
-      break;
-    case "sf-one-how-to":
-      sfOneHowTo(sender_psid);
-      break;
-    case "sf-two-how-to":
-      sfTwoHowTo(sender_psid);
+      searchByCategory(sender_psid);
       break;
     default:
       defaultReply(sender_psid);
