@@ -183,7 +183,7 @@ const handlePostback = (sender_psid, received_postback) => {
       searchByCategory(sender_psid);
       break;
     case "electric":
-      electric(sender_psid);
+      searchByCategory(sender_psid);
       break;
     case "clothing":
       clothing(sender_psid);
